@@ -1,0 +1,2 @@
+- [2004/12/25 02:59:39](https://web.archive.org/web/20041225025939/http://www.bellcity.ne.jp/~kazuman/index98.html)
+- [2006/05/21 21:29:42](https://web.archive.org/web/20060521212942/http://www.bellcity.ne.jp/~kazuman/index98.html)
