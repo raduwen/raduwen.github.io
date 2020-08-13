@@ -364,5 +364,13 @@
     <footer>
       &copy; raduwen. All Rights Reserved.
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('./test.json')
+          .then((res) => res.json())
+          .then((json) => console.log(json))
+      })
+    </script>
   </body>
 </html>
