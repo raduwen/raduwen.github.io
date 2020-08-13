@@ -1,0 +1,30 @@
+{
+  "name": "raduwen.github.io",
+  "version": "0.0.1",
+  "description": "raduwen.tech",
+  "main": "index.js",
+  "repository": "https://github.com/raduwen/raduwen.github.io.git",
+  "author": "raduwen <raduwen@gmail.com>",
+  "private": true,
+  "homepage": "https://raduwen.github.io",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.3"
+  },
+  "browserslist": [
+    "> 0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
