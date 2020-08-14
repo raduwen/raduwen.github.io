@@ -28,7 +28,6 @@ hr {
 }
 
 .white { color: white; }
-.blue { color: #7fbfbf; }
 .gray { color: #999999; }
 
 .center {
@@ -36,17 +35,6 @@ hr {
 }
 
 .medium { font-size: medium; }
-
-.box {
-  display: inline-block;
-  width: 370px;
-  background-color: #003b4e;
-
-  border: white solid 1px;
-  border-radius: 8px;
-  padding: 16px;
-  padding-bottom: 0;
-}
 
 .mt-10 {
   margin-top: 10rem;
