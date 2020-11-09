@@ -1,4 +1,4 @@
-function HomePage() {
+const HomePage = () => {
   return (
     <div>
       <a href="https://bbs.jpnkn.com/raduwen/" target="_blank">掲示板</a><br/>
