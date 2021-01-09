@@ -2,7 +2,9 @@ const HomePage = () => {
   return (
     <div>
       <a href="https://bbs.jpnkn.com/raduwen/" target="_blank">掲示板</a><br/>
-      <a href="https://stamp.archsted.com/291" target="_blank">スタンプキャスト</a><br/>
+      <strike>
+        <a target="_blank">スタンプキャスト</a><br/>
+      </strike>
       <span>
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEzElEQVR4Xu2ZbUxbVRjHf4cCLZXxos4MiMrYnLHuJRODZL4wA+syMz8sMcuCiQtZjJpM2GKifltifIkmRoviNMM4pw5jUBN1zgJimCiDZbIBynSDsTCY4lrQCUuF9phLVrh0t11LbxZvevlEzn3u8/J7/s85l4MgwX9EgtePCcBUQIITMEcgwQVgboLmCJgjkOAEzBFIcAGYp4A5AuYIJDgBcwQSXADmKWCOgMsp67XGQAbYs6NJuPUaEdd6+TiSsmj9CUFXpVs8F629YlezVqZPpbIbSLvsPcnuqkbxbei6cDmlLFhDiz1z9tHZLqxjwywNwMqdbnEuliTC2bqcstaezR2Li/lLbfPzQdaGiT9e5RZRA1N8upxyb5KFUoeTPnWM3iby/f/yfFWjqNUE8Mh7DGXlkhd8ePh9Wjv2cw/QVNmAUyBkvBAUAAVrWLpxFyVqX9XrQTN+Hb5YALiccgtQZ11A92P1rFDHqN1C54SXt+YDACTPVDWKV/7PAN58QN48NcVxAZn6A4BJBIfiBYDktiQLAVsGf6p9TYyyOowCHQg6g7YCDiVNUeO38A6CrDn5SJYA+cpaWACj2BAMX3qvvsot3lZ+n94DQhPwDDBwsoWzwSC/tZA87iVz9SY86sBH6liWt4oTuQ6Sgusjp/APdLCqqJwetW3Xl2QkW/E5nPjU68qoRRN/bIiLQLZtAWLlg1zQasiZo8ixYbJCR+DXZo6ODk6/z4QXf883FAt4urJBVGsCCHXe/Dotg8ewbt1LsfpZzUZOlz2F99b7KQyuDxyh+6tdLNz+NYvUth9vpzV9If5o9gCt+D0HKbFlcrxiH7ek2LBrAej8jLaO/aSHAgi1VYC4X+Z2JM8aBsCJZnIf/YS8cMUrRUYLQLHtPkD7d9XcZRgAWgoM7WwsAMaGGdpXQZ4mgMmLTIyPMhoM0LqHU57TV28Eoo1/YYQ//FNMBfPs+oK+3iayQ0dg3Mv51DTsKWmzoxMRgOo7YAZyZg6Hr9YeEEt8/ySL1UoIdwos38B48dbpb5vpn4gAot0EtTaicGvxboLxjIDyIWQCiKCAycLNtN29jXvDdU85BnsbKaj4ELs9m+ti6XzQNpICCjfzvR7xw22CERVQ7ZQPSfioqJwO9Yyoi1QAKOewJYW+ig/Img+ESAAAWVTOD/HGnxcApdAghBwH7WlZBEI7/HsvGconq7KenEr/TXcyGKsKBn9ikSUFX+6K2dNF8dH/48wfRzLHQWs88c/3Y/tnhBvzizmpzm+gnSX2bM7dsIyJ4Lrvb8RQD/fNXIhcglCn1BhrcQa298y5EUowCB4hKL3sSixBIHgCkrKdjeKY5p1g1BAkZxBcD1wT1xhIfkHguIKPfpi+tLHGFQu8AUmpUrziJ+ylaDQQhMBNgJek4EA8EPyC5RZJDcy9LQop9NMkeDcAn8cBYU7xEQEoD13r5CYED0cg3lnVIF6oXidLpODJ+XZGWHjC52fCCq9JuFbLjxS07XCLV99wyg0B2DaPWFIEeLGyScxcslwRwDyCGO4V8/8ChmuZzgmbCtAZqOHcmQowXMt0TthUgM5ADefOVIDhWqZzwqYCdAZqOHemAgzXMp0TNhWgM1DDuTMVYLiW6ZywqQCdgRrO3X+7d8vpIRhEsgAAAABJRU5ErkJggg==" />
         <a href="https://www.twitch.tv/raduwen" target="_blank">Twitch</a><br/>
