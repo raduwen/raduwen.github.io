@@ -3,19 +3,18 @@ import styles from '@/styles/layout.module.css'
 import Logo from '@/components/Logo'
 import Copyright from '@/components/Copyright'
 
+import MainMenu from '@/components/MainMenu'
+import SubMenu from '@/components/SubMenu'
+
 const TopPage = () => {
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
-        <nav>
-          メインメニュー: 工事中
-        </nav>
+        <MainMenu />
       </header>
 
       <aside className={styles.aside}>
-        <nav>
-          サブメニュー: 工事中
-        </nav>
+        <SubMenu />
       </aside>
 
       <main className={styles.main}>
