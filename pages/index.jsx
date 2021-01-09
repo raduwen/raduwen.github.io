@@ -3,7 +3,7 @@ import Copyright from '@/components/Copyright'
 
 const HomePage = () => {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center", minHeight: "calc(100vh - 96px)" }}>
       <div style={{ marginTop: "64px", marginBottom: "32px" }}>
         <Logo />
       </div>
@@ -27,7 +27,7 @@ const HomePage = () => {
         </span>
       </main>
 
-      <footer style={{ marginTop: "64px" }}>
+      <footer style={{ marginBottom: "64px", position: "absolute", bottom: 0, left: 0, right: 0 }}>
         <Copyright />
       </footer>
     </div>
