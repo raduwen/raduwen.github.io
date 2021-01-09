@@ -11,20 +11,30 @@ const HomePage = () => {
       <main>
         <h1 style={{ color: "red", fontSize: "1.5rem" }}>ラドウェンのラボ</h1>
 
-        <p style={{ marginBottom: "32px" }}>
+        <p>
           どっかでみたことある？<br />
           そうじゃよ。ワシはあのサイトのファンなのじゃよ。
         </p>
-        <a href="https://bbs.jpnkn.com/raduwen/" target="_blank">掲示板</a><br/>
-        <strike>
-          <a target="_blank">スタンプキャスト</a><br/>
-        </strike>
-        <span>
-          <a href="https://www.twitch.tv/raduwen" target="_blank">Twitch</a><br/>
-        </span>
-        <span>
-          <a href="https://www.youtube.com/channel/UC9qkQ8wBNtykTaLrNHh_IJQ/" target="_blank">YouTube</a>(特に何もないかも)<br/>
-        </span>
+
+        <p>
+          <small>
+            <strike>入場</strike><br />
+            🚧 🚧 🚧 🚧 🚧
+          </small>
+        </p>
+
+        <p>
+          <a href="https://bbs.jpnkn.com/raduwen/" target="_blank">掲示板</a><br/>
+          <strike>
+            <a target="_blank">スタンプキャスト</a><br/>
+          </strike>
+          <span>
+            <a href="https://www.twitch.tv/raduwen" target="_blank">Twitch</a><br/>
+          </span>
+          <span>
+            <a href="https://www.youtube.com/channel/UC9qkQ8wBNtykTaLrNHh_IJQ/" target="_blank">YouTube</a>(特に何もないかも)<br/>
+          </span>
+        </p>
       </main>
 
       <footer style={{ marginBottom: "64px", position: "absolute", bottom: 0, left: 0, right: 0 }}>
