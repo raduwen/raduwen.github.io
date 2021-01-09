@@ -3,12 +3,14 @@ import Copyright from '@/components/Copyright'
 
 const HomePage = () => {
   return (
-    <div style={{ textAlign: "center", minHeight: "calc(100vh - 96px)" }}>
-      <div style={{ marginTop: "64px", marginBottom: "32px" }}>
-        <Logo />
-      </div>
+    <div style={{ textAlign: "center", margin: 0, display: "flex", flexFlow: "column", minHeight: "100vh" }}>
+      <header>
+        <div style={{ marginTop: "64px", marginBottom: "32px" }}>
+          <Logo />
+        </div>
+      </header>
 
-      <main>
+      <main style={{ flex: 1 }}>
         <h1 style={{ color: "red", fontSize: "1.5rem" }}>ラドウェンのラボ</h1>
 
         <p>
@@ -37,7 +39,7 @@ const HomePage = () => {
         </p>
       </main>
 
-      <footer style={{ marginBottom: "64px", position: "absolute", bottom: 0, left: 0, right: 0 }}>
+      <footer style={{ height: "auto", padding: "32px 0" }}>
         <Copyright />
       </footer>
     </div>
