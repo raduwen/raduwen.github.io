@@ -6,7 +6,7 @@ import Copyright from '@/components/Copyright'
 import MainMenu from '@/components/MainMenu'
 import SubMenu from '@/components/SubMenu'
 
-const TopPage = () => {
+const HomePage = () => {
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
@@ -31,4 +31,4 @@ const TopPage = () => {
   )
 }
 
-export default TopPage
+export default HomePage
