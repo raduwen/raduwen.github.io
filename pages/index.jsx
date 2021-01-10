@@ -1,7 +1,7 @@
 import Logo from '@/components/Logo'
 import Copyright from '@/components/Copyright'
 
-const HomePage = () => {
+const IndexPage = () => {
   return (
     <div style={{ textAlign: "center", margin: 0, display: "flex", flexFlow: "column", minHeight: "100vh" }}>
       <header>
@@ -46,4 +46,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default IndexPage
