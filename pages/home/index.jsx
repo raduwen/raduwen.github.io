@@ -24,7 +24,10 @@ const HomePage = () => {
           <BoxBody>
             <section>
               <Logo />
-              <p>まだ何もないんじゃ</p>
+              <p>
+                まだ何もないんじゃ。<br />
+                SPAにしてもええかもと思っとる。
+              </p>
             </section>
 
             <section>
