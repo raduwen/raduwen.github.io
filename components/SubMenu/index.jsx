@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const borderStyle = '1px solid black'
 
 const styles = {
@@ -22,20 +24,30 @@ const styles = {
     borderBottom: borderStyle,
   },
   a: {
-    color: 'rgb(255, 162, 162)',
     textDecoration: 'none',
   },
 }
 
+const MenuItem = ({ text, href }) => {
+  const [isHover, setIsHover] = useState(false);
+  const color = isHover ? 'white' : 'rgb(255, 162, 162)'
+
+  return (
+    <li style={ styles.li } onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }}>
+      <a style={{ ...styles.a, color }} href={href}>❤️ {text}</a>
+    </li>
+  )
+}
+
 const SubMenu = () => {
   return (
-    <nav style={{ backgroundColor: '#e89797', paddingBottom: '64px' }}>
+    <nav style={{ backgroundColor: 'rgb(255, 128, 128)'/* '#e89797' */, paddingBottom: '64px' }}>
       <section>
         <h2 style={ styles.title }>まずはここを<br/>チェックじゃ〜</h2>
         <ul style={ styles.ul }>
-          <li style={ styles.li }><a style={ styles.a } href="#">トップページ</a></li>
-          <li style={ styles.li }><a style={ styles.a } href="#">はじめに</a></li>
-          <li style={ styles.li }><a style={ styles.a } href="#">質問&amp;サポート</a></li>
+          <MenuItem href="#" text="トップページ" />
+          <MenuItem href="#" text="はじめに" />
+          <MenuItem href="#" text="質問&サポート" />
         </ul>
       </section>
     </nav>
