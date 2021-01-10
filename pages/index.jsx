@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import Logo from '@/components/Logo'
 import Copyright from '@/components/Copyright'
 
@@ -18,11 +20,14 @@ const IndexPage = () => {
           そうじゃよ。ワシはあのサイトのファンなのじゃよ。
         </p>
 
-        <p>
-          <small>
-            <strike>入場</strike><br />
-            🚧 🚧 🚧 🚧 🚧
-          </small>
+        <p style={{ fontSize: "1.0rem" }}>
+          <Link href="/home">
+            <a>
+              <strong>
+                入場
+              </strong>
+            </a>
+          </Link>
         </p>
 
         <p>
