@@ -28,7 +28,7 @@ const HomePage = () => {
             </section>
 
             <section>
-              <h2 style={{ fontSize: '18px' }}>NEWS</h2>
+              <h2>NEWS</h2>
               <dl>
                 <dt>2021/01/11</dt>
                 <dd>メニューとホームに配置してるコンポーネントを追加!</dd>
