@@ -28,13 +28,18 @@ const styles = {
   },
 }
 
-const MenuItem = ({ text, href }) => {
+const MenuItem = ({ text, href, disabled }) => {
   const [isHover, setIsHover] = useState(false);
   const color = isHover ? 'white' : 'rgb(255, 162, 162)'
 
   return (
     <li style={ styles.li } onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }}>
-      <a style={{ ...styles.a, color }} href={href}>❤️ {text}</a>
+      <a style={{ ...styles.a, color }} href={href}>
+        {disabled
+          ? <strike>❤️ {text}</strike>
+          : <span>❤️ {text}</span>
+        }
+      </a>
     </li>
   )
 }
@@ -46,8 +51,8 @@ const SubMenu = () => {
         <h2 style={ styles.title }>まずはここを<br/>チェックじゃ〜</h2>
         <ul style={ styles.ul }>
           <MenuItem href="#" text="トップページ" />
-          <MenuItem href="#" text="はじめに" />
-          <MenuItem href="#" text="質問&サポート" />
+          <MenuItem href="#" text="はじめに" disabled={true} />
+          <MenuItem href="#" text="質問&サポート" disabled />
         </ul>
       </section>
     </nav>
