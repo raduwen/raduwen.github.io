@@ -2,9 +2,10 @@ import styles from '@/styles/layout.module.css'
 
 import Logo from '@/components/Logo'
 import Copyright from '@/components/Copyright'
-
 import MainMenu from '@/components/MainMenu'
 import SubMenu from '@/components/SubMenu'
+
+import Box, { BoxBody, BoxBar } from '@/components/Box'
 
 const HomePage = () => {
   return (
@@ -18,10 +19,24 @@ const HomePage = () => {
       </aside>
 
       <main className={styles.main}>
-        <Logo />
-        <p>
-          まだ何もないんじゃ
-        </p>
+        <Box>
+          <BoxBar>ほげ</BoxBar>
+          <BoxBody>
+            <section>
+              <Logo />
+              <p>まだ何もないんじゃ</p>
+            </section>
+
+            <section>
+              <h2 style={{ fontSize: '18px' }}>NEWS</h2>
+              <dl>
+                <dt>2021/01/11</dt>
+                <dd>メニューとホームに配置してるコンポーネントを追加!</dd>
+              </dl>
+            </section>
+          </BoxBody>
+          <BoxBar>ふが</BoxBar>
+        </Box>
       </main>
 
       <footer className={styles.footer}>
