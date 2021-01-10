@@ -14,7 +14,7 @@ const style = {
 
 const Box = ({ children }) => {
   return (
-    <div style={{ borderTop: borderStyle, borderRight: borderStyle, borderLeft: borderStyle, width: '75%' }}>
+    <div style={{ borderTop: borderStyle, borderRight: borderStyle, borderLeft: borderStyle, width: '75%', minWidth: '396px' }}>
       {children}
     </div>
   )
