@@ -8,7 +8,6 @@
   min-height: 100vh;
 
   /* background-color: rgb(232, 151, 151); */
-  
   background-color: rgb(255, 128, 128);
   /* background-color: rgb(255, 115, 115); */
 }
@@ -17,12 +16,22 @@
   grid-row: 1;
   grid-column-start: 1;
   grid-column-end: 3;
+
+  position: fixed;
+  width: 100%;
+  background-color: rgb(255, 128, 128);
 }
 
 .aside {
   grid-row-start: 2;
   grid-row-end: 4;
   grid-column: 1;
+
+  position: fixed;
+  top: 44px;
+  width: 134px;
+
+  background-color: rgb(255, 128, 128);
 }
 
 .main {
