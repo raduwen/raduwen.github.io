@@ -60,6 +60,7 @@ const styles = {
     height: '44px',
     border: borderStyle,
     boxSizing: 'border-box',
+    backgroundColor: 'gray',
   },
   ul: {
     margin: 0,
@@ -106,11 +107,17 @@ const MenuItem = ({ text, color, onClick }) => {
   )
 }
 
+const BrandLogo = () => {
+  return (
+    <h1 style={{ ...styles.logo, textAlign: 'center', verticalAlign: 'middle' }}>Brand Logo</h1>
+  )
+}
+
 const MainMenu = () => {
   return (
     <nav>
       <section style={{ display: 'flex' }}>
-        <h1 style={{ ...styles.logo, textAlign: 'center', verticalAlign: 'middle' }}>Brand Logo</h1>
+        <BrandLogo />
         <ul style={ styles.ul }>
           <MenuItem text="トップ" color="a" onClick={() => console.log("TODO")}/>
           <MenuItem text="トップ" color="b" onClick={() => console.log("TODO")}/>
