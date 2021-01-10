@@ -101,7 +101,7 @@ const MenuItem = ({ text, color, onClick }) => {
     <li style={liStyle} onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }} onClick={onClick}>
       <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '10px', textDecoration: 'none' }}>
         <div style={{ color: subColor }}>{text}</div>
-        <div style={{ ...styles.img, backgroundColor: subColor }}>img</div>
+        <div style={{ ...styles.img, backgroundColor: subColor }}></div>
       </div>
     </li>
   )
@@ -120,14 +120,14 @@ const MainMenu = () => {
         <BrandLogo />
         <ul style={ styles.ul }>
           <MenuItem text="トップ" color="a" onClick={() => console.log("TODO")}/>
-          <MenuItem text="トップ" color="b" onClick={() => console.log("TODO")}/>
-          <MenuItem text="トップ" color="c" onClick={() => console.log("TODO")}/>
-          <MenuItem text="トップ" color="d" onClick={() => console.log("TODO")}/>
-          <MenuItem text="トップ" color="e" onClick={() => console.log("TODO")}/>
-          <MenuItem text="トップ" color="f" onClick={() => console.log("TODO")}/>
-          <MenuItem text="トップ" color="g" onClick={() => console.log("TODO")}/>
-          <MenuItem text="トップ" color="h" onClick={() => console.log("TODO")}/>
-          <MenuItem text="トップ" color="i" onClick={() => console.log("TODO")}/>
+          <MenuItem text="???" color="b" onClick={() => console.log("TODO")}/>
+          <MenuItem text="???" color="c" onClick={() => console.log("TODO")}/>
+          <MenuItem text="???" color="d" onClick={() => console.log("TODO")}/>
+          <MenuItem text="???" color="e" onClick={() => console.log("TODO")}/>
+          <MenuItem text="???" color="f" onClick={() => console.log("TODO")}/>
+          <MenuItem text="???" color="g" onClick={() => console.log("TODO")}/>
+          <MenuItem text="???" color="h" onClick={() => console.log("TODO")}/>
+          <MenuItem text="???" color="i" onClick={() => console.log("TODO")}/>
         </ul>
       </section>
     </nav>
