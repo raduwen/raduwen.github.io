@@ -21,7 +21,7 @@ const IndexPage = () => {
         </p>
 
         <p style={{ fontSize: "1.0rem" }}>
-          <Link href="/home">
+          <Link href="/top">
             <a>
               <strong>
                 入場
