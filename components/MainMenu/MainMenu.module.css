@@ -23,21 +23,26 @@
 }
 
 .main_menu_li {
-    width: 38px;
-    height: 40px;
-    display: inline-block;
-    font-size: 1rem;
-    border-right: 2px solid black;
-    box-sizing: border-box;
+  width: 38px;
+  height: 40px;
+  display: inline-block;
+  font-size: 1rem;
+  border-right: 2px solid black;
+  box-sizing: border-box;
+}
+
+.main_menu_text {
+  transform: scale(0.8);
+  font-weight: bold;
 }
 
 .main_menu_img {
-    width: 28px;
-    height: 28px;
-    border: 2px solid black;
-    box-sizing: border-box;
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 2px;
+  width: 28px;
+  height: 28px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 2px;
 }

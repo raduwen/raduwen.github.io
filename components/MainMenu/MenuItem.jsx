@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { main_menu_li, main_menu_img }from './MainMenu.module.css'
+import { main_menu_li, main_menu_text, main_menu_img }from './MainMenu.module.css'
 
 const colors = {
   a: {
@@ -59,7 +59,7 @@ const MenuItem = ({ text, color, onClick }) => {
   return (
     <li className={main_menu_li} style={liStyle} onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }} onClick={onClick}>
       <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '10px', textDecoration: 'none' }}>
-        <div style={{ color: c }}>{text}</div>
+        <div className={main_menu_text} style={{ color: c }}>{text}</div>
         <div className={main_menu_img} style={{ backgroundColor: c }}></div>
       </div>
     </li>
