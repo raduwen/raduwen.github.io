@@ -58,7 +58,8 @@ const HomePage = () => {
               <Logo />
               <p>
                 まだ何もないんじゃ。<br />
-                SPAにしてもええかもと思っとる。
+                SPAにしてもええかもと思っとる。<br />
+                素材用意するのが大変じゃ。
               </p>
             </section>
 
@@ -66,8 +67,24 @@ const HomePage = () => {
               <h2>NEWS</h2>
               <dl>
                 <dt>2021/01/11</dt>
+                <dd>メニュー整理</dd>
+                <dt>2021/01/11</dt>
                 <dd>メニューとホームに配置してるコンポーネントを追加!</dd>
               </dl>
+            </section>
+
+            <section>
+              <h2>ToDo</h2>
+              <ul>
+                <li>各種素材</li>
+                <li>メッセージ用コンポーネント</li>
+                <li>各ページ</li>
+                <li>永続化検討</li>
+                <li>各サービス/アプリ</li>
+              </ul>
+              <p>
+                気が向いたら更新するのじゃ。
+              </p>
             </section>
           </BoxBody>
           <BoxBar>ふが</BoxBar>
