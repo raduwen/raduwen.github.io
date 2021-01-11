@@ -1,0 +1,33 @@
+.sub_menu_topic {
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 213, 170);
+  background-color: rgb(86, 44, 44);
+  border: 1px solid black;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.sub_menu_ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  background-color: rgb(181, 91, 91);
+}
+
+.sub_menu_li {
+  font-size: 1rem;
+  border-bottom: 1px solid black;
+  color: rgb(255, 162, 162);
+}
+
+.sub_menu_li_hover {
+  color: rgb(255, 255, 255);
+}
+
+.sub_menu_link {
+  text-decoration: none;
+  color: inherit;
+}
