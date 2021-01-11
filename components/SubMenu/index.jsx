@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useState } from 'react'
 
 const borderStyle = '1px solid black'
@@ -34,12 +35,14 @@ const MenuItem = ({ text, href, disabled }) => {
 
   return (
     <li style={ styles.li } onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }}>
-      <a style={{ ...styles.a, color }} href={href}>
-        {disabled
-          ? <strike>❤️ {text}</strike>
-          : <span>❤️ {text}</span>
-        }
-      </a>
+      <Link href={href}>
+        <a style={{ ...styles.a, color }}>
+          {disabled
+            ? <strike>❤️ {text}</strike>
+            : <span>❤️ {text}</span>
+          }
+        </a>
+      </Link>
     </li>
   )
 }
@@ -50,7 +53,7 @@ const SubMenu = () => {
       <section>
         <h2 style={ styles.title }>まずはここを<br/>チェックじゃ〜</h2>
         <ul style={ styles.ul }>
-          <MenuItem href="#" text="トップページ" />
+          <MenuItem href="/top" text="トップページ" />
           <MenuItem href="#" text="はじめに" disabled={true} />
           <MenuItem href="#" text="質問&サポート" disabled />
         </ul>
