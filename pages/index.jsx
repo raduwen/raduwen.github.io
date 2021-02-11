@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Logo from '@/components/Logo'
 import Copyright from '@/components/Copyright'
 
+  /*
 const IndexPage = () => {
   return (
     <div style={{ textAlign: "center", margin: 0, display: "flex", flexFlow: "column", minHeight: "100vh" }}>
@@ -49,6 +50,11 @@ const IndexPage = () => {
       </footer>
     </div>
   )
+}
+*/
+
+const IndexPage = () => {
+  return <div>〜何もないよ〜</div>
 }
 
 export default IndexPage
