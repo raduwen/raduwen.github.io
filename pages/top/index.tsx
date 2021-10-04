@@ -66,6 +66,8 @@ const HomePage = () => {
             <section>
               <h2>NEWS</h2>
               <dl>
+                <dt>2021/10/05</dt>
+                <dd>フォントを修正</dd>
                 <dt>2021/01/19</dt>
                 <dd>メニューアイコン追加</dd>
                 <dt>2021/01/11</dt>
