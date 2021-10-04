@@ -1,8 +1,17 @@
 import { useState } from 'react'
+import styles from './MainMenu.module.css'
 
-import { main_menu_li, main_menu_text, main_menu_img }from './MainMenu.module.css'
+type Color = {
+  dark: string;
+  normal: string
+  light: string
+}
 
-const colors = {
+type Colors = {
+  [key: string]: Color
+}
+
+const colors: Colors = {
   a: {
     dark: "rgb(146, 86, 70)",
     normal:  "rgb(175, 115, 116)",
@@ -50,17 +59,23 @@ const colors = {
   },
 }
 
-const MenuItem = ({ text, color, onClick }) => {
+type Props = {
+  text: string
+  color: string
+  onClick: () => {}
+}
+
+const MenuItem = ({ text, color, onClick }: Props) => {
   const [isHover, setIsHover] = useState(false);
 
   const liStyle = { backgroundColor: colors[color].dark }
   const c = isHover ? colors[color].light : colors[color].normal
 
   return (
-    <li className={main_menu_li} style={liStyle} onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }} onClick={onClick}>
+    <li className={styles.main_menu_li} style={liStyle} onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }} onClick={onClick}>
       <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '10px', textDecoration: 'none' }}>
-        <div className={main_menu_text} style={{ color: c }}>{text}</div>
-        <div className={main_menu_img} style={{ backgroundColor: c }}></div>
+        <div className={styles.main_menu_text} style={{ color: c }}>{text}</div>
+        <div className={styles.main_menu_img} style={{ backgroundColor: c }}></div>
       </div>
     </li>
   )

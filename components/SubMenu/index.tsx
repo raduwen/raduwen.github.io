@@ -1,11 +1,10 @@
-import Link from 'next/link'
-import { useState } from 'react'
+import { FC } from 'react'
 
 import MenuItem from './MenuItem'
 import Topic from './Topic'
 import styles from './SubMenu.module.css'
 
-const SubMenu = ({ children }) => {
+const SubMenu: FC = ({ children }) => {
   return (
     <nav>
       <section>

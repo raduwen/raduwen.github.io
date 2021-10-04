@@ -1,3 +1,4 @@
+import { FC } from 'react'
 const borderStyle = '2px solid black'
 
 const style = {
@@ -12,7 +13,7 @@ const style = {
   }
 }
 
-const Box = ({ children }) => {
+const Box: FC = ({ children }) => {
   return (
     <div style={{ borderTop: borderStyle, borderRight: borderStyle, borderLeft: borderStyle, width: '75%', minWidth: '396px' }}>
       {children}
@@ -20,7 +21,7 @@ const Box = ({ children }) => {
   )
 }
 
-const BoxBody = ({ children }) => {
+const BoxBody: FC = ({ children }) => {
   return (
     <div style={style.body}>
       {children}
@@ -28,7 +29,7 @@ const BoxBody = ({ children }) => {
   )
 }
 
-const BoxBar = ({ children }) => {
+const BoxBar: FC = ({ children }) => {
   return (
     <div style={style.bar}>
       {children}

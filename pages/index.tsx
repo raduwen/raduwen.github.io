@@ -1,9 +1,11 @@
+import type { NextPage } from 'next'
+
+/*
 import Link from 'next/link'
 
 import Logo from '@/components/Logo'
 import Copyright from '@/components/Copyright'
 
-  /*
 const IndexPage = () => {
   return (
     <div style={{ textAlign: "center", margin: 0, display: "flex", flexFlow: "column", minHeight: "100vh" }}>
@@ -53,7 +55,7 @@ const IndexPage = () => {
 }
 */
 
-const IndexPage = () => {
+const IndexPage: NextPage = () => {
   return <div>〜何もないよ〜</div>
 }
 

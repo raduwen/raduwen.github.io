@@ -2,7 +2,19 @@ import styles from './MainMenu.module.css'
 import BrandLogo from './BrandLogo'
 import MenuItem from './MenuItem'
 
-const MainMenu = ({ onTop, onYobi, onProfile, onChat, onBbs, onIllust, onGame, onCGI, onLink }) => {
+type Props = {
+  onTop: () => {}
+  onYobi: () => {}
+  onProfile: () => {}
+  onChat: () => {}
+  onBbs: () => {}
+  onIllust: () => {}
+  onGame: () => {}
+  onCGI: () => {}
+  onLink: () => {}
+}
+
+const MainMenu = ({ onTop, onYobi, onProfile, onChat, onBbs, onIllust, onGame, onCGI, onLink }: Props) => {
   return (
     <nav>
       <section style={{ display: 'flex' }}>
