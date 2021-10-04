@@ -1,17 +1,20 @@
 import styles from './MainMenu.module.css'
 import BrandLogo from './BrandLogo'
 import MenuItem from './MenuItem'
+import React from 'react'
+
+type Handler = (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
 
 type Props = {
-  onTop: () => {}
-  onYobi: () => {}
-  onProfile: () => {}
-  onChat: () => {}
-  onBbs: () => {}
-  onIllust: () => {}
-  onGame: () => {}
-  onCGI: () => {}
-  onLink: () => {}
+  onTop: Handler
+  onYobi: Handler
+  onProfile: Handler
+  onChat: Handler
+  onBbs: Handler
+  onIllust: Handler
+  onGame: Handler
+  onCGI: Handler
+  onLink: Handler
 }
 
 const MainMenu = ({ onTop, onYobi, onProfile, onChat, onBbs, onIllust, onGame, onCGI, onLink }: Props) => {

@@ -59,10 +59,12 @@ const colors: Colors = {
   },
 }
 
+type Handler = (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
+
 type Props = {
   text: string
   color: string
-  onClick: () => {}
+  onClick: Handler
 }
 
 const MenuItem = ({ text, color, onClick }: Props) => {
