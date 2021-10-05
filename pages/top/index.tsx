@@ -1,4 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
+
+import { initFirebase } from '@/lib/firebase/initFirebase';
 
 import Logo from '@/components/Logo'
 import Copyright from '@/components/Copyright'
@@ -15,11 +18,38 @@ import {
   LinkSubMenu,
 } from '@/components/SubMenu'
 import Box, { BoxBody, BoxBar } from '@/components/Box'
-
 import styles from '@/styles/layout.module.css'
 
-const HomePage = () => {
+type News = {
+  date: Date;
+  topics: string[];
+};
+
+export default function HomePage() {
   const [currentSubMenu, setCurrentSubMenu] = useState('top');
+  const [news, setNews] = useState<News[]>([]);
+
+  useEffect(() => {
+    const f = async () => {
+      const { firestore } = initFirebase();
+
+      const ns: News[] = [];
+      const q = query(collection(firestore, "news"), orderBy("date", "desc"), limit(10));
+      const qSnap = await getDocs(q);
+      qSnap.forEach((doc) => {
+        const data = doc.data();
+        const report = {
+          date: new Date(data.date.seconds * 1000),
+          topics: data.topics,
+        };
+        ns.push(report);
+      });
+      setNews(ns);
+    };
+    f();
+  }, []);
+
+  console.log(news);
 
   return (
     <div className={styles.wrapper}>
@@ -66,14 +96,12 @@ const HomePage = () => {
             <section>
               <h2>NEWS</h2>
               <dl>
-                <dt>2021/10/05</dt>
-                <dd>フォントを修正</dd>
-                <dt>2021/01/19</dt>
-                <dd>メニューアイコン追加</dd>
-                <dt>2021/01/11</dt>
-                <dd>メニュー整理</dd>
-                <dt>2021/01/11</dt>
-                <dd>メニューとホームに配置してるコンポーネントを追加!</dd>
+                {news.map((record) => (
+                  <>
+                    <dt>{record.date.toLocaleString('ja-Jp', { year: 'numeric', month: 'numeric', day: 'numeric' })}</dt>
+                    {record.topics.map((topic, i) => <dd key={`${record.date.getTime()}-${i}`}>{topic}</dd>)}
+                  </>
+                ))}
               </dl>
             </section>
 
@@ -101,5 +129,3 @@ const HomePage = () => {
     </div>
   )
 }
-
-export default HomePage
