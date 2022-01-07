@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import styles from './MainMenu.module.css'
+import styled from '@emotion/styled';
 
 type Color = {
   dark: string;
-  normal: string
-  light: string
-}
+  normal: string;
+  light: string;
+};
+
+type ColorKey = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i';
 
 type Colors = {
-  [key: string]: Color
-}
+  [key: string]: Color;
+};
 
 const colors: Colors = {
   a: {
@@ -57,30 +59,70 @@ const colors: Colors = {
     normal: "rgb(184, 107, 156)",
     light: "rgb(218, 178, 203)",
   },
-}
+};
 
-type Handler = (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
+const LI = styled.li`
+  width: 38px;
+  height: 40px;
+  display: inline-block;
+  font-size: 1rem;
+  border-right: 2px solid black;
+  box-sizing: border-box;
+  background-color: ${(props: { color: ColorKey }) => colors[props.color].dark};
+`;
+
+const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  text-decoration: none;
+`;
+
+type ThemeProps = {
+  color: ColorKey;
+  light: boolean;
+};
+
+const MenuItemText = styled.div`
+  transform: scale(0.8);
+  font-weight: bold;
+  color: ${(props: ThemeProps) => colors[props.color][props.light ? 'light' : 'normal']};
+`;
+
+const MenuItemImage = styled.div`
+  width: 28px;
+  height: 28px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  background-image: url(/stachu.gif);
+  background-color: ${(props: ThemeProps) => colors[props.color][props.light ? 'light' : 'normal']};
+`;
+
+type Handler = (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 
 type Props = {
-  text: string
-  color: string
-  onClick: Handler
-}
+  text: string;
+  color: ColorKey;
+  onClick: Handler;
+};
 
 const MenuItem = ({ text, color, onClick }: Props) => {
   const [isHover, setIsHover] = useState(false);
 
-  const liStyle = { backgroundColor: colors[color].dark }
-  const c = isHover ? colors[color].light : colors[color].normal
-
   return (
-    <li className={styles.main_menu_li} style={liStyle} onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }} onClick={onClick}>
-      <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '10px', textDecoration: 'none' }}>
-        <div className={styles.main_menu_text} style={{ color: c }}>{text}</div>
-        <div className={styles.main_menu_img} style={{ backgroundColor: c }}></div>
-      </div>
-    </li>
-  )
-}
+    <LI color={color} onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }} onClick={onClick}>
+      <Wrapper>
+        <MenuItemText color={color} light={isHover}>{text}</MenuItemText>
+        <MenuItemImage color={color} light={isHover}></MenuItemImage>
+      </Wrapper>
+    </LI>
+  );
+};
 
-export default MenuItem
+export default MenuItem;
