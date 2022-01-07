@@ -1,8 +1,8 @@
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 import styled from '@emotion/styled';
 
-import MenuItem from './MenuItem'
-import Topic from './Topic'
+import MenuItem from './MenuItem';
+import Topic from './Topic';
 
 const SubMenu = ({ children }: { children: ReactNode }) => {
   return (
