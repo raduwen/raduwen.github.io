@@ -1,10 +1,13 @@
-import { FC } from 'react'
-import styles from './SubMenu.module.css'
+import styled from '@emotion/styled';
 
-const Topic: FC = ({ children }) => {
-  return (
-    <div className={styles.sub_menu_topic}>{children}</div>
-  )
-}
+const Topic = styled.div`
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 213, 170);
+  background-color: rgb(86, 44, 44);
+  border: 1px solid black;
+  font-size: 1rem;
+  font-weight: bold;
+`;
 
-export default Topic
+export default Topic;
