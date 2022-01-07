@@ -1,33 +1,38 @@
-import Link from 'next/link'
-import { useState } from 'react'
-import styles from './SubMenu.module.css'
+import Link from 'next/link';
+import styled from '@emotion/styled';
 
 type Props = {
-  text: string
-  href: string
-  disabled?: boolean
-}
+  text: string;
+  href: string;
+  disabled?: boolean;
+};
+
+const LI = styled.li`
+  font-size: 1rem;
+  border-bottom: 1px solid black;
+  color: rgb(255, 162, 162);
+  &:hover {
+    color: rgb(255, 255, 255);
+  }
+`;
+
+const A = styled.a`
+  text-decoration: none;
+  color: inherit;
+`;
 
 const MenuItem = ({ text, href, disabled }: Props) => {
-  const [isHover, setIsHover] = useState(false);
-  const color = isHover ? 'white' : 'rgb(255, 162, 162)'
-
-  const li_classes = [styles.sub_menu_li]
-  if (isHover) {
-    li_classes.push(styles.sub_menu_li_hover)
-  }
-
   return (
-    <li className={ li_classes.join(' ') } onMouseEnter={() => { setIsHover(true) }} onMouseLeave={() => { setIsHover(false) }}>
-      <Link href={href}>
-        <a className={styles.sub_menu_link}>
+    <LI>
+      <Link href={href} passHref>
+        <A>
           {disabled
             ? <del>❤️ {text}</del>
             : <span>❤️ {text}</span>
           }
-        </a>
+        </A>
       </Link>
-    </li>
+    </LI>
   )
 }
 
