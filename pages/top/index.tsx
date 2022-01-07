@@ -49,8 +49,6 @@ export default function HomePage() {
     f();
   }, []);
 
-  console.log(news);
-
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
