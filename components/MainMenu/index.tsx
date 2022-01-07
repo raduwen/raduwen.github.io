@@ -1,9 +1,23 @@
-import styles from './MainMenu.module.css'
-import BrandLogo from './BrandLogo'
-import MenuItem from './MenuItem'
-import React from 'react'
+import React from 'react';
+import styled from '@emotion/styled';
+import BrandLogo from './BrandLogo';
+import MenuItem from './MenuItem';
 
-type Handler = (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
+const Section = styled.section`
+  display: flex;
+`;
+
+const UL = styled.ul`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+`;
+
+type Handler = (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 
 type Props = {
   onTop: Handler
@@ -15,14 +29,14 @@ type Props = {
   onGame: Handler
   onCGI: Handler
   onLink: Handler
-}
+};
 
 const MainMenu = ({ onTop, onYobi, onProfile, onChat, onBbs, onIllust, onGame, onCGI, onLink }: Props) => {
   return (
     <nav>
-      <section style={{ display: 'flex' }}>
+      <Section>
         <BrandLogo />
-        <ul className={styles.main_menu_ul}>
+        <UL>
           <MenuItem text="トップ" color="a" onClick={onTop}/>
           <MenuItem text="???" color="b" onClick={onYobi}/>
           <MenuItem text="プロフ" color="c" onClick={onProfile}/>
@@ -32,10 +46,10 @@ const MainMenu = ({ onTop, onYobi, onProfile, onChat, onBbs, onIllust, onGame, o
           <MenuItem text="ゲーム" color="g" onClick={onGame}/>
           <MenuItem text="CGI" color="h" onClick={onCGI}/>
           <MenuItem text="リンク" color="i" onClick={onLink}/>
-        </ul>
-      </section>
+        </UL>
+      </Section>
     </nav>
-  )
-}
+  );
+};
 
-export default MainMenu
+export default MainMenu;
