@@ -1,9 +1,19 @@
-import styles from './MainMenu.module.css'
+import styled from '@emotion/styled';
 
-const BrandLogo = () => {
-  return (
-    <h1 className={styles.brand_logo}>Brand Logo</h1>
-  )
-}
+const H1 = styled.h1`
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 134px;
+  height: 44px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  background-color: gray;
+  text-align: center;
+  vertical-align: middle;
+`;
 
-export default BrandLogo
+const BrandLogo = () => <H1>Brand Logo</H1>;
+
+export default BrandLogo;
