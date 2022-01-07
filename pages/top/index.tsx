@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
+import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
+import styled from '@emotion/styled';
 
 import { initFirebase } from '@/lib/firebase/initFirebase';
 
@@ -24,6 +25,54 @@ type News = {
   date: Date;
   topics: string[];
 };
+
+const Wrapper = styled.div`
+  display: grid;
+
+  /* aside:width / main */
+  grid-template-columns: 134px 1fr;
+  /* header:44px / main / footer:64px */
+  grid-template-rows: 44px 1fr 64px;
+  min-height: 100vh;
+
+  /* background-color: rgb(232, 151, 151); */
+  background-color: rgb(255, 128, 128);
+  /* background-color: rgb(255, 115, 115); */
+`;
+
+const Header = styled.header`
+  grid-row: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  position: fixed;
+  width: 100%;
+  background-color: rgb(255, 128, 128);
+}
+`;
+
+const Aside = styled.aside`
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column: 1;
+
+  position: fixed;
+  top: 44px;
+  width: 134px;
+
+  background-color: rgb(255, 128, 128);
+`;
+
+const Main = styled.main`
+  grid-row: 2;
+  grid-column: 2;
+  margin: 4px;
+`;
+
+const Footer = styled.footer`
+  grid-row: 3;
+  grid-column: 2;
+`;
 
 export default function HomePage() {
   const [currentSubMenu, setCurrentSubMenu] = useState('top');
@@ -50,8 +99,8 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className={styles.wrapper}>
-      <header className={styles.header}>
+    <Wrapper>
+      <Header>
         <MainMenu
           onTop={() => { setCurrentSubMenu('top') }}
           onYobi={() => { setCurrentSubMenu('yobi') }}
@@ -63,9 +112,9 @@ export default function HomePage() {
           onCGI={() => { setCurrentSubMenu('cgi') }}
           onLink={() => { setCurrentSubMenu('link') }}
         />
-      </header>
+      </Header>
 
-      <aside className={styles.aside}>
+      <Aside>
         {currentSubMenu == 'top' ? <TopSubMenu /> :
          currentSubMenu == 'yobi' ? <YobiSubMenu /> :
          currentSubMenu == 'profile' ? <ProfileSubMenu /> :
@@ -76,9 +125,9 @@ export default function HomePage() {
          currentSubMenu == 'cgi' ? <CGISubMenu /> :
          currentSubMenu == 'link' ? <LinkSubMenu /> :
          null}
-      </aside>
+      </Aside>
 
-      <main className={styles.main}>
+      <Main>
         <Box>
           <BoxBar>ほげ</BoxBar>
           <BoxBody>
@@ -119,11 +168,11 @@ export default function HomePage() {
           </BoxBody>
           <BoxBar>ふが</BoxBar>
         </Box>
-      </main>
+      </Main>
 
-      <footer className={styles.footer}>
+      <Footer>
         <Copyright />
-      </footer>
-    </div>
+      </Footer>
+    </Wrapper>
   )
 }
