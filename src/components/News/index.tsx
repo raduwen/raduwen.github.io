@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 import type { NewsEntity } from '@/repositories/NewsRepository'
 import { NewsRepository } from '@/repositories/NewsRepository'
 
-const NewsRecord = ({ date, topic }: { date: string, topic: string }) => (
+const NewsRecord = ({ date, topic }: { date: string; topic: string }) => (
   <Box display="flex" fontSize="md">
     <Box>{date}</Box>
     <Box ml={4}>{topic}</Box>
@@ -13,10 +13,10 @@ const NewsRecord = ({ date, topic }: { date: string, topic: string }) => (
 )
 
 const News = () => {
-  const [news, setNews] = useState<NewsEntity[]>([]);
+  const [news, setNews] = useState<NewsEntity[]>([])
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       const repo = new NewsRepository()
       const data = await repo.getLatest()
       setNews(data)
@@ -27,10 +27,16 @@ const News = () => {
     <Box>
       <Heading>NEWS</Heading>
       <Box mt={2}>
-        {news.map((r) => <NewsRecord key={r.date.getTime()} date={format(r.date, 'yyyy/MM/dd')} topic={r.topic} />)}
+        {news.map((r) => (
+          <NewsRecord
+            key={r.date.getTime()}
+            date={format(r.date, 'yyyy/MM/dd')}
+            topic={r.topic}
+          />
+        ))}
       </Box>
     </Box>
-  );
-};
+  )
+}
 
 export { News }

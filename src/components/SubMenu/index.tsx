@@ -16,7 +16,7 @@ const SubMenu = ({ current }: SubMenuProps) => {
   const [menu, setMenu] = useState<SubMenuEntity | undefined>(undefined)
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       const repo = new SubMenuRepository()
       const data = await repo.get(current)
       setMenu(data)
@@ -28,14 +28,16 @@ const SubMenu = ({ current }: SubMenuProps) => {
       <nav>
         <section>
           <Box>
-            {menu && (<>
-              <Topic text={menu.topic} />
-              <MenuList>
-                {menu.items.map((item, i) => (
-                  <MenuListItem href={item.href} text={item.text} key={i} />
-                ))}
-              </MenuList>
-            </>)}
+            {menu && (
+              <>
+                <Topic text={menu.topic} />
+                <MenuList>
+                  {menu.items.map((item, i) => (
+                    <MenuListItem href={item.href} text={item.text} key={i} />
+                  ))}
+                </MenuList>
+              </>
+            )}
           </Box>
         </section>
       </nav>

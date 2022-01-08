@@ -12,11 +12,11 @@ type MainMenuProps = {
 }
 
 const MainMenu = ({ onSelected }: MainMenuProps) => {
-  const [mainMenus, setMainMenus] = useState<MainMenuEntity[]>([]);
+  const [mainMenus, setMainMenus] = useState<MainMenuEntity[]>([])
 
   useEffect(() => {
-    (async () => {
-      const entities = await (new MainMenuRepository).getAll()
+    ;(async () => {
+      const entities = await new MainMenuRepository().getAll()
       setMainMenus(entities)
     })()
   }, [])

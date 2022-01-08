@@ -10,15 +10,15 @@ type SubMenuEntity = {
 
 const data = {
   top: {
-    topic: "準備中...\nなのじゃ",
+    topic: '準備中...\nなのじゃ',
     items: [{ href: '/top', text: 'トップ' }],
   },
   hoge: {
-    topic: "準備中...\nなのじゃ",
+    topic: '準備中...\nなのじゃ',
     items: [],
   },
   peca: {
-    topic: "ピアキャストって\n知ってる?",
+    topic: 'ピアキャストって\n知ってる?',
     items: [],
   },
   game: {
@@ -26,11 +26,11 @@ const data = {
     items: [{ href: '#', text: 'game' }],
   },
   prog: {
-    topic: "プログラミング\nつらい...",
+    topic: 'プログラミング\nつらい...',
     items: [{ href: '#', text: 'prog' }],
   },
   music: {
-    topic: "音楽\n楽しい!",
+    topic: '音楽\n楽しい!',
     items: [
       { href: '#', text: 'ピアノ' },
       { href: '#', text: 'ギター' },

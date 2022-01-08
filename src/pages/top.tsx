@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Box, Heading, Text } from '@chakra-ui/react'
+import { Box, Text } from '@chakra-ui/react'
 
 import { MainLayout } from '@/layouts/MainLayout'
 import { News } from '@/components/News'
@@ -8,7 +8,7 @@ const TopPage = () => {
   return (
     <Box border="2px" bg="orange.50" p="8" minW="480px" w="80%" minH="320px">
       <Box display="flex" justifyContent="center">
-        <Image src="/images/logo.png" width="332" height="32" />
+        <Image alt="logo" src="/images/logo.png" width="332" height="32" />
       </Box>
 
       <Box mt="16">
