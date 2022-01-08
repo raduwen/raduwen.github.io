@@ -9,8 +9,8 @@ type MainMenuProps = {
 
 const MainMenu = ({ onSelected }: MainMenuProps) => {
   const menus = [
-    { color: 'a', text: 'トップ', sub: 'top', image: '/images/stachu.png' },
-    { color: 'b', text: 'ホゲ', sub: 'hoge', image: '/images/stachu.png' },
+    { color: 'a', text: 'トップ', sub: 'top', image: '/images/top.png' },
+    { color: 'b', text: 'ホゲ', sub: 'hoge', image: '/images/hoge.png' },
     { color: 'c', text: 'ペカ', sub: 'peca', image: '/images/stachu.png' },
     { color: 'd', text: 'ゲーム', sub: 'game', image: '/images/stachu.png' },
     { color: 'e', text: 'プログ', sub: 'prog', image: '/images/stachu.png' },

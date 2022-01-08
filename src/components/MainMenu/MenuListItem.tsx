@@ -48,6 +48,7 @@ const MenuListItem = ({ text, color, image, onClick }: MenuListItemProps) => {
           border="2px solid black"
           bgImg={image}
           bgColor={c}
+          bgPos="center"
         ></Box>
       </Box>
     </ListItem>
