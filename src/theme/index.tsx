@@ -42,6 +42,53 @@ const theme = extendTheme({
         bg: 'rgb(181, 91, 91)',
       },
     },
+    mainMenu: {
+      a: {
+        bg: 'rgb(146, 86, 70)',
+        text: 'rgb(175, 115, 116)',
+        textHover: 'rgb(203, 140, 142)',
+      },
+      b: {
+        bg: 'rgb(95, 82, 55)',
+        text: 'rgb(177, 152, 116)',
+        textHover: 'rgb(202, 184, 159)',
+      },
+      c: {
+        bg: 'rgb(87, 93, 65)',
+        text: 'rgb(132, 141, 98)',
+        textHover: 'rgb(167, 174, 142)',
+      },
+      d: {
+        bg: 'rgb(73, 104, 80)',
+        text: 'rgb(101, 159, 119)',
+        textHover: 'rgb(158, 196, 169)',
+      },
+      e: {
+        bg: 'rgb(61, 78, 75)',
+        text: 'rgb(102, 151, 139)',
+        textHover: 'rgb(152, 185, 178)',
+      },
+      f: {
+        bg: 'rgb(77, 90, 96)',
+        text: 'rgb(107, 133, 153)',
+        textHover: 'rgb(175, 190, 201)',
+      },
+      g: {
+        bg: 'rgb(70, 68, 95)',
+        text: 'rgb(113, 98, 160)',
+        textHover: 'rgb(175, 169, 202)',
+      },
+      h: {
+        bg: 'rgb(88, 71, 101)',
+        text: 'rgb(133, 99, 151)',
+        textHover: 'rgb(186, 165, 196)',
+      },
+      i: {
+        bg: 'rgb(108, 63, 95)',
+        text: 'rgb(184, 107, 156)',
+        textHover: 'rgb(218, 178, 203)',
+      },
+    },
   },
 })
 

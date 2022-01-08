@@ -34,6 +34,58 @@ const subMenus: { [key: string]: SubMenuInfoProps } = {
     ),
     items: [{ href: '#', text: 'hoge' }],
   },
+  peca: {
+    topic: (
+      <>
+        peca
+        <br />
+        peca
+      </>
+    ),
+    items: [{ href: '#', text: 'peca' }],
+  },
+  game: {
+    topic: (
+      <>
+        game
+        <br />
+        over
+      </>
+    ),
+    items: [{ href: '#', text: 'game' }],
+  },
+  prog: {
+    topic: (
+      <>
+        programming
+        <br />
+        turai
+      </>
+    ),
+    items: [{ href: '#', text: 'prog' }],
+  },
+  music: {
+    topic: (
+      <>
+        music
+        <br />
+        funny!
+      </>
+    ),
+    items: [{ href: '#', text: 'piano' }],
+  },
+  yobi1: {
+    topic: <>yobi</>,
+    items: [],
+  },
+  yobi2: {
+    topic: <>yobi</>,
+    items: [],
+  },
+  yobi3: {
+    topic: <>yobi</>,
+    items: [],
+  },
 }
 
 export { subMenus }

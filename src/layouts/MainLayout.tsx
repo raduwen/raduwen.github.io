@@ -1,16 +1,27 @@
+import { useState } from 'react'
 import { Grid, GridItem, Box } from '@chakra-ui/react'
 
-import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
+import { MainMenu } from '@/components/MainMenu'
 import { SubMenu } from '@/components/SubMenu'
+import { Footer } from '@/components/Footer'
 
 const MainLayout = ({ children }: { children: JSX.Element }) => {
+  const [currentSubMenu, setCurrentSubMenu] = useState('top')
+
   return (
     <Grid templateRows="44px 1fr 64px" templateColumns="134px 1fr" minH="100vh">
       <GridItem gridRow={1} gridColumnStart={1} gridColumnEnd={3}>
-        <header>header</header>
+        <Header>
+          <MainMenu
+            onSelected={(v) => {
+              setCurrentSubMenu(v)
+            }}
+          />
+        </Header>
       </GridItem>
       <GridItem gridRowStart={2} gridRowEnd={4} gridColumn={1}>
-        <SubMenu />
+        <SubMenu current={currentSubMenu} />
       </GridItem>
       <GridItem gridRow={2} gridColumn={2}>
         <Box as="main" bg="bg" minH="100%">

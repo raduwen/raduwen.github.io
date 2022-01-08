@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Box } from '@chakra-ui/react'
 
 import { Topic } from './Topic'
@@ -6,9 +5,11 @@ import { MenuList } from './MenuList'
 import { MenuListItem } from './MenuListItem'
 import { subMenus } from './subMenus'
 
-const SubMenu = () => {
-  const [current, _setCurrent] = useState('top')
+type SubMenuProps = {
+  current: string
+}
 
+const SubMenu = ({ current }: SubMenuProps) => {
   const menu = subMenus[current]
 
   return (
