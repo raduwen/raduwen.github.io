@@ -1,4 +1,4 @@
-import { Grid, GridItem, Container } from '@chakra-ui/react'
+import { Grid, GridItem, Box } from '@chakra-ui/react'
 
 import { Footer } from '@/components/Footer'
 import { SubMenu } from '@/components/SubMenu'
@@ -13,10 +13,9 @@ const MainLayout = ({ children }: { children: JSX.Element }) => {
         <SubMenu />
       </GridItem>
       <GridItem gridRow={2} gridColumn={2}>
-        <main>
-          main
-          <Container maxW="container.lg">{children}</Container>
-        </main>
+        <Box as="main" bg="bg" minH="100%">
+          <Box p="4">{children}</Box>
+        </Box>
       </GridItem>
       <GridItem gridRow={3} gridColumn={2}>
         <Footer />
