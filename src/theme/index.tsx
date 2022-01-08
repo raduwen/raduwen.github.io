@@ -29,6 +29,9 @@ const theme = extendTheme({
     '7xl': '4rem',
     '8xl': '5rem',
   },
+  colors: {
+    bg: 'rgb(255, 128, 128)',
+  },
 })
 
 export { theme }

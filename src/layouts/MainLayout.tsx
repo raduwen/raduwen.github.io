@@ -1,5 +1,6 @@
 import { Grid, GridItem, Container } from '@chakra-ui/react'
 
+import { Footer } from '@/components/Footer'
 const MainLayout = ({ children }: { children: JSX.Element }) => {
   return (
     <Grid templateRows="44px 1fr 64px" templateColumns="134px 1fr" minH="100vh">
@@ -16,7 +17,7 @@ const MainLayout = ({ children }: { children: JSX.Element }) => {
         </main>
       </GridItem>
       <GridItem gridRow={3} gridColumn={2}>
-        <footer>footer</footer>
+        <Footer />
       </GridItem>
     </Grid>
   )
