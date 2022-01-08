@@ -1,12 +1,23 @@
+import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
 
 import { theme } from '@/theme'
 
-const App = ({ Component, pageProps }: AppProps) => {
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: JSX.Element) => JSX.Element
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? ((page) => page)
+
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
     </ChakraProvider>
   )
 }
