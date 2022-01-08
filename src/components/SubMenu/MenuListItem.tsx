@@ -9,7 +9,9 @@ const MenuListItem = ({ href, text }: { href: string; text: string }) => (
     _hover={{ color: 'subMenu.item.textHover' }}
   >
     <NextLink href={href} passHref>
-      <Link color="inherit">❤️ {text}</Link>
+      <Link color="inherit" _hover={{ textDecor: 'none' }}>
+        ❤️ {text}
+      </Link>
     </NextLink>
   </ListItem>
 )
