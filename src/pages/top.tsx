@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Box, Heading, Text } from '@chakra-ui/react'
 
 import { MainLayout } from '@/layouts/MainLayout'
+import { News } from '@/components/News'
 
 const TopPage = () => {
   return (
@@ -14,6 +15,10 @@ const TopPage = () => {
         <Text fontSize="xl" textAlign="center">
           工事中だよ
         </Text>
+      </Box>
+
+      <Box mt="16">
+        <News />
       </Box>
     </Box>
   )
