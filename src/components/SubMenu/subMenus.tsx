@@ -12,54 +12,43 @@ const subMenus: { [key: string]: SubMenuInfoProps } = {
   top: {
     topic: (
       <>
-        hello
+        準備中...
         <br />
-        world
+        なのじゃ
       </>
     ),
-    items: [
-      { href: '#', text: 'hoge' },
-      { href: '#', text: 'fuga' },
-      { href: '#', text: 'fuga' },
-      { href: '#', text: 'fuga' },
-    ],
+    items: [{ href: '/top', text: 'トップ' }],
   },
   hoge: {
     topic: (
       <>
-        hoge
+        準備中...
         <br />
-        hoge
+        なのじゃ
       </>
     ),
-    items: [{ href: '#', text: 'hoge' }],
+    items: [] /*[{ href: '#', text: 'hoge' }]*/,
   },
   peca: {
     topic: (
       <>
-        peca
+        ピアキャストって
         <br />
-        peca
+        知ってる?
       </>
     ),
-    items: [{ href: '#', text: 'peca' }],
+    items: [] /*[{ href: '#', text: 'peca' }]*/,
   },
   game: {
-    topic: (
-      <>
-        game
-        <br />
-        over
-      </>
-    ),
+    topic: <>GAME OVER!</>,
     items: [{ href: '#', text: 'game' }],
   },
   prog: {
     topic: (
       <>
-        programming
+        プログラミング
         <br />
-        turai
+        つらい...
       </>
     ),
     items: [{ href: '#', text: 'prog' }],
@@ -67,23 +56,24 @@ const subMenus: { [key: string]: SubMenuInfoProps } = {
   music: {
     topic: (
       <>
-        music
-        <br />
-        funny!
+        音楽 <br /> 楽しい!
       </>
     ),
-    items: [{ href: '#', text: 'piano' }],
+    items: [
+      { href: '#', text: 'ピアノ' },
+      { href: '#', text: 'ギター' },
+    ],
   },
   yobi1: {
-    topic: <>yobi</>,
+    topic: <>予備1</>,
     items: [],
   },
   yobi2: {
-    topic: <>yobi</>,
+    topic: <>予備2</>,
     items: [],
   },
   yobi3: {
-    topic: <>yobi</>,
+    topic: <>予備3</>,
     items: [],
   },
 }
