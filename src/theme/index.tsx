@@ -31,6 +31,17 @@ const theme = extendTheme({
   },
   colors: {
     bg: 'rgb(255, 128, 128)',
+    subMenu: {
+      topic: {
+        text: 'rgb(255, 213, 170)',
+        bg: 'rgb(86, 44, 44)',
+      },
+      item: {
+        text: 'rgb(255, 162, 162)',
+        textHover: 'rgb(255, 255, 255)',
+        bg: 'rgb(181, 91, 91)',
+      },
+    },
   },
 })
 
