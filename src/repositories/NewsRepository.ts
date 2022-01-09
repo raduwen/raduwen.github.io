@@ -1,3 +1,6 @@
+import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore'
+import { getFirestore } from '@/lib/firebase'
+
 type NewsEntity = {
   date: Date
   topic: string
@@ -5,15 +8,29 @@ type NewsEntity = {
 
 class NewsRepository {
   async getLatest(count = 10): Promise<NewsEntity[]> {
-    return new Promise((resolve) => {
-      resolve(
-        [
-          {
-            date: new Date('2022-01-08T00:00:00+09:00'),
-            topic: 'サイト開設',
-          },
-        ].slice(0, count),
+    const firestore = getFirestore()
+
+    return new Promise((resolve, reject) => {
+      const q = query(
+        collection(firestore, 'news'),
+        orderBy('date', 'desc'),
+        limit(count),
       )
+      getDocs(q)
+        .then((docs) => {
+          const ns: NewsEntity[] = []
+          docs.forEach((doc) => {
+            const data = doc.data()
+            ns.push({
+              date: data.date.toDate(),
+              topic: data.topic,
+            })
+          })
+          resolve(ns)
+        })
+        .catch((e) => {
+          reject(e)
+        })
     })
   }
 }
