@@ -21,6 +21,7 @@ const data = {
     topic: 'ピアキャストって\n知ってる?',
     items: [
       { href: '/peca/about', text: 'ピアキャストって何?' },
+      { href: '/peca/about_stachu', text: 'すたちゅーって何?' },
     ],
   },
   game: {

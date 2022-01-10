@@ -17,7 +17,11 @@ const MenuListItem = ({
     _hover={{ color: 'subMenu.item.textHover' }}
   >
     <NextLink href={href} passHref>
-      <Link color="inherit" _hover={{ textDecor: 'none' }} _focus={{ boxShadow: 'none' }}>
+      <Link
+        color="inherit"
+        _hover={{ textDecor: 'none' }}
+        _focus={{ boxShadow: 'none' }}
+      >
         ❤️ {disabled ? <del>{text}</del> : text}
       </Link>
     </NextLink>
