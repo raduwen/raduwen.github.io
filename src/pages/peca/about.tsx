@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Box, Heading, Text, Link } from '@chakra-ui/react'
 
 import { MainLayout } from '@/layouts/MainLayout'
+import { Board } from '@/components/Board'
 
 const PecaAboutPage = () => {
   return (
@@ -9,7 +10,7 @@ const PecaAboutPage = () => {
       <Head>
         <title>ピアキャストって何? | ラドウェンのラボ</title>
       </Head>
-      <Box border="2px" bg="orange.50" p="8" minW="480px" w="80%" minH="320px">
+      <Board>
         <Heading textAlign="center">ピアキャストって何?</Heading>
 
         <Box mt="16" px="16">
@@ -33,7 +34,7 @@ const PecaAboutPage = () => {
             を御覧ください。
           </Text>
         </Box>
-      </Box>
+      </Board>
     </>
   )
 }

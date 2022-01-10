@@ -87,6 +87,9 @@ const daytime = {
         textHover: 'rgb(218, 178, 203)',
       },
     },
+    board: {
+      bg: 'rgb(255, 240, 240)',
+    },
   },
 }
 

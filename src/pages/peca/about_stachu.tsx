@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react'
 
 import { MainLayout } from '@/layouts/MainLayout'
+import { Board } from '@/components/Board'
 
 const PecaAboutStachuPage = () => {
   return (
@@ -16,7 +17,7 @@ const PecaAboutStachuPage = () => {
       <Head>
         <title>すたちゅーって何? | ラドウェンのラボ</title>
       </Head>
-      <Box border="2px" bg="orange.50" p="8" minW="480px" w="80%" minH="320px">
+      <Board>
         <Heading textAlign="center">すたちゅーって何?</Heading>
 
         <Box mt="16" px="16">
@@ -33,7 +34,7 @@ const PecaAboutStachuPage = () => {
             </ListItem>
           </UnorderedList>
         </Box>
-      </Box>
+      </Board>
     </>
   )
 }
