@@ -1,6 +1,7 @@
 type SubMenuItemEntity = {
   href: string
   text: string
+  disabled?: boolean
 }
 
 type SubMenuEntity = {
@@ -23,17 +24,17 @@ const data = {
   },
   game: {
     topic: 'GAME OVER!',
-    items: [{ href: '#', text: 'game' }],
+    items: [{ href: '#', text: 'game', disabled: true }],
   },
   prog: {
     topic: 'プログラミング\nつらい...',
-    items: [{ href: '#', text: 'prog' }],
+    items: [{ href: '#', text: 'prog', disabled: true }],
   },
   music: {
     topic: '音楽\n楽しい!',
     items: [
-      { href: '#', text: 'ピアノ' },
-      { href: '#', text: 'ギター' },
+      { href: '#', text: 'ピアノ', disabled: true },
+      { href: '#', text: 'ギター', disabled: true },
     ],
   },
   illus: {

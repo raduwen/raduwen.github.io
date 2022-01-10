@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import { ListItem, Link } from '@chakra-ui/react'
 
-const MenuListItem = ({ href, text }: { href: string; text: string }) => (
+const MenuListItem = ({ href, text, disabled }: { href: string; text: string, disabled?: boolean }) => (
   <ListItem
     fontSize="1rem"
     borderBottom="1px solid black"
@@ -10,7 +10,7 @@ const MenuListItem = ({ href, text }: { href: string; text: string }) => (
   >
     <NextLink href={href} passHref>
       <Link color="inherit" _hover={{ textDecor: 'none' }}>
-        ❤️ {text}
+        ❤️ {disabled ? <del>{text}</del> : text}
       </Link>
     </NextLink>
   </ListItem>

@@ -33,7 +33,7 @@ const SubMenu = ({ current }: SubMenuProps) => {
                 <Topic text={menu.topic} />
                 <MenuList>
                   {menu.items.map((item, i) => (
-                    <MenuListItem href={item.href} text={item.text} key={i} />
+                    <MenuListItem href={item.href} text={item.text} disabled={item.disabled} key={i} />
                   ))}
                 </MenuList>
               </>
