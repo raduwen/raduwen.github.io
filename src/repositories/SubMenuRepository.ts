@@ -36,8 +36,8 @@ const data = {
       { href: '#', text: 'ギター' },
     ],
   },
-  yobi1: {
-    topic: '予備1',
+  illus: {
+    topic: '絵を描くのは\n難しい',
     items: [],
   },
   yobi2: {

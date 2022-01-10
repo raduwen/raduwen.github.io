@@ -32,8 +32,8 @@ class MainMenuRepository {
         },
         {
           color: 'g',
-          text: '????',
-          sub: 'yobi1',
+          text: 'イラス',
+          sub: 'illus',
           image: '/images/construction.png',
         },
         {
