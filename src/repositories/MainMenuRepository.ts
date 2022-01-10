@@ -10,42 +10,42 @@ class MainMenuRepository {
     return new Promise((resolve) => {
       resolve([
         { color: 'a', text: 'トップ', sub: 'top', image: '/images/top.png' },
-        { color: 'b', text: 'ホゲ', sub: 'hoge', image: '/images/hoge.png' },
-        { color: 'c', text: 'ペカ', sub: 'peca', image: '/images/stachu.png' },
+        { color: 'b', text: 'ペカ', sub: 'peca', image: '/images/stachu.png' },
         {
-          color: 'd',
+          color: 'c',
           text: 'ゲーム',
           sub: 'game',
           image: '/images/construction.png',
         },
         {
-          color: 'e',
+          color: 'd',
           text: 'プログ',
           sub: 'prog',
           image: '/images/construction.png',
         },
         {
-          color: 'f',
+          color: 'e',
           text: '音楽',
           sub: 'music',
           image: '/images/construction.png',
         },
         {
-          color: 'g',
+          color: 'f',
           text: 'イラス',
           sub: 'illus',
           image: '/images/construction.png',
         },
+        { color: 'g', text: 'ホゲ', sub: 'hoge', image: '/images/hoge.png' },
         {
           color: 'h',
           text: '????',
-          sub: 'yobi2',
+          sub: 'yobi1',
           image: '/images/construction.png',
         },
         {
           color: 'i',
           text: '????',
-          sub: 'yobi3',
+          sub: 'yobi2',
           image: '/images/construction.png',
         },
       ])

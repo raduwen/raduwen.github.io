@@ -17,10 +17,6 @@ const data = {
       { href: '/top/raduwen', text: '管理人?' },
     ],
   },
-  hoge: {
-    topic: '準備中...\nなのじゃ',
-    items: [],
-  },
   peca: {
     topic: 'ピアキャストって\n知ってる?',
     items: [],
@@ -44,12 +40,16 @@ const data = {
     topic: '絵を描くのは\n難しい',
     items: [],
   },
-  yobi2: {
-    topic: '予備2',
+  hoge: {
+    topic: '準備中...\nなのじゃ',
     items: [],
   },
-  yobi3: {
-    topic: '予備3',
+  yobi1: {
+    topic: '予備1',
+    items: [],
+  },
+  yobi2: {
+    topic: '予備2',
     items: [],
   },
 }
