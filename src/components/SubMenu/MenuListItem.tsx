@@ -1,7 +1,15 @@
 import NextLink from 'next/link'
 import { ListItem, Link } from '@chakra-ui/react'
 
-const MenuListItem = ({ href, text, disabled }: { href: string; text: string, disabled?: boolean }) => (
+const MenuListItem = ({
+  href,
+  text,
+  disabled,
+}: {
+  href: string
+  text: string
+  disabled?: boolean
+}) => (
   <ListItem
     fontSize="1rem"
     borderBottom="1px solid black"
