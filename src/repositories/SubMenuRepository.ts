@@ -12,7 +12,10 @@ type SubMenuEntity = {
 const data = {
   top: {
     topic: '準備中...\nなのじゃ',
-    items: [{ href: '/top', text: 'トップ' }],
+    items: [
+      { href: '/top', text: 'トップ' },
+      { href: '/top/raduwen', text: '管理人?' },
+    ],
   },
   hoge: {
     topic: '準備中...\nなのじゃ',
