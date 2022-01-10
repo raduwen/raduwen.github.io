@@ -1,6 +1,4 @@
-import { extendTheme } from '@chakra-ui/react'
-
-const theme = extendTheme({
+const daytime = {
   styles: {
     global: {
       'html, body': {
@@ -90,6 +88,6 @@ const theme = extendTheme({
       },
     },
   },
-})
+}
 
-export { theme }
+export { daytime }
