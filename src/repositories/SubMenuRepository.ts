@@ -19,7 +19,9 @@ const data = {
   },
   peca: {
     topic: 'ピアキャストって\n知ってる?',
-    items: [],
+    items: [
+      { href: '/peca/about', text: 'ピアキャストって何?' },
+    ],
   },
   game: {
     topic: 'GAME OVER!',
