@@ -26,7 +26,7 @@ const RaduwenPage = () => {
             </UnorderedList>
           </Box>
           <Box>
-            <Image src="/images/raduwen.png" width={112} height={112} />
+            <Image alt="ラドウェン(raduwen)" src="/images/raduwen.png" width={112} height={112} />
           </Box>
         </Box>
       </Board>

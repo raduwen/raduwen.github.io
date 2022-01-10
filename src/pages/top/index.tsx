@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Box, Text } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
 import { MainLayout } from '@/layouts/MainLayout'
 import { Board } from '@/components/Board'
