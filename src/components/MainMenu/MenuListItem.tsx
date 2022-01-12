@@ -47,8 +47,12 @@ const MenuListItem = ({ text, color, image, onClick }: MenuListItemProps) => {
           h="28px"
           border="2px solid black"
           bgImg={image}
+          bgRepeat="no-repeat"
+          bgPos="left 50% top 1px"
           bgColor={c}
-          bgPos="center"
+          _hover={{
+            bgPos: 'center',
+          }}
         ></Box>
       </Box>
     </ListItem>
