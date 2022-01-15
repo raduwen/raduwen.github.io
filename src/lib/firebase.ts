@@ -2,6 +2,13 @@ import { initializeApp, getApps } from 'firebase/app'
 import type { FirebaseApp } from 'firebase/app'
 import { getFirestore as getStore } from 'firebase/firestore'
 import type { Firestore } from 'firebase/firestore'
+import {
+  getAuth,
+  TwitterAuthProvider,
+  signInWithRedirect,
+  signOut,
+} from 'firebase/auth'
+import type { Auth } from 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -21,4 +28,24 @@ const getFirestore = (): Firestore => {
   return getStore(getApp())
 }
 
-export { getApp, getFirestore }
+const getAuthenticate = (): Auth => {
+  const auth = getAuth(getApp())
+  auth.languageCode = 'ja'
+  return auth
+}
+
+const login = async () => {
+  const auth = getAuthenticate()
+  const provider = new TwitterAuthProvider()
+  provider.setCustomParameters({
+    lang: 'ja',
+  })
+
+  signInWithRedirect(auth, provider)
+}
+
+const logout = async () => {
+  signOut(getAuthenticate())
+}
+
+export { getApp, getFirestore, getAuthenticate, login, logout }
