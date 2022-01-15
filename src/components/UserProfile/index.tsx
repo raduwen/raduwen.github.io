@@ -5,7 +5,6 @@ import { useUser } from '@/hooks/useUser'
 
 const UserProfile = () => {
   const { user, loading } = useUser()
-  console.log(user)
 
   return (
     <Box bg="userProfile.bg" border="1px solid black" display="flex" flexDirection="column" justifyContent="center" alignItems="center" w="100%" py="2">
