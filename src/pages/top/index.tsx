@@ -5,12 +5,8 @@ import { Box } from '@chakra-ui/react'
 import { MainLayout } from '@/layouts/MainLayout'
 import { Board } from '@/components/Board'
 import { News } from '@/components/News'
-import { login, logout } from '@/lib/firebase'
-import { useUser } from '@/hooks/useUser'
 
 const TopPage = () => {
-  const { user, loading } = useUser()
-
   return (
     <>
       <Head>
@@ -21,13 +17,6 @@ const TopPage = () => {
           <Image alt="logo" src="/images/logo.png" width="332" height="32" />
         </Box>
 
-        <Box mt="16">
-          {loading ? <>loading...</> : user.isAnonymous ? (
-            <button onClick={login}>sign in with twitter</button>
-          ) : (
-            <button onClick={logout}>sign out</button>
-          )}
-        </Box>
         <Box mt="16">
           <News />
         </Box>

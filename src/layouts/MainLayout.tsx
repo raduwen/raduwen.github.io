@@ -4,6 +4,7 @@ import { Grid, GridItem, Box } from '@chakra-ui/react'
 import { Header } from '@/components/Header'
 import { MainMenu } from '@/components/MainMenu'
 import { SubMenu } from '@/components/SubMenu'
+import { UserProfile } from '@/components/UserProfile'
 import { Footer } from '@/components/Footer'
 
 const MainLayout = ({ children }: { children: JSX.Element }) => {
@@ -21,6 +22,7 @@ const MainLayout = ({ children }: { children: JSX.Element }) => {
         </Header>
       </GridItem>
       <GridItem gridRowStart={2} gridRowEnd={4} gridColumn={1}>
+        <UserProfile />
         <SubMenu current={currentSubMenu} />
       </GridItem>
       <GridItem gridRow={2} gridColumn={2}>

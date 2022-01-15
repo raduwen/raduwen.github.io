@@ -90,6 +90,10 @@ const daytime = {
     board: {
       bg: 'rgb(255, 240, 240)',
     },
+    userProfile: {
+      bg: 'rgb(0, 0, 64)',
+      text: 'rgb(255, 255, 255)'
+    }
   },
 }
 
