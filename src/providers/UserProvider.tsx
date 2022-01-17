@@ -1,6 +1,7 @@
 import { FC, useState, useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
-import { getAuthenticate } from '@/lib/firebase'
+import { doc, setDoc, getDoc } from 'firebase/firestore'
+import { getAuthenticate, getFirestore } from '@/lib/firebase'
 import { UserContext } from '@/contexts/UserContext'
 
 type User = {
@@ -12,6 +13,26 @@ type User = {
 
 const NewUser = (): User => {
   return { uid: null, name: null, photoURL: null, isAnonymous: true }
+}
+
+const logSignedIn = async (uid: string) => {
+  const db = getFirestore()
+  const snap = await getDoc(doc(db, 'users', uid))
+  if (snap.exists()) {
+    const now = new Date()
+    const user = snap.data()
+    if (now.getDate > user.lastSignedIn.toDate().getDate()) {
+      setDoc(doc(db, 'users', uid), {
+        lastSignedIn: now,
+        signInCount: user.signInCount + 1,
+      })
+    }
+  } else {
+    setDoc(doc(db, 'users', uid), {
+      lastSignedIn: new Date(),
+      signInCount: 1,
+    })
+  }
 }
 
 const UserProvider: FC = ({ children }) => {
@@ -28,6 +49,7 @@ const UserProvider: FC = ({ children }) => {
           photoURL: user.photoURL,
           isAnonymous: user.isAnonymous,
         })
+        logSignedIn(user.uid)
       } else {
         setUser(NewUser())
       }
