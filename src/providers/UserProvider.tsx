@@ -1,8 +1,8 @@
 import { FC, useState, useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
-import { doc, setDoc, getDoc } from 'firebase/firestore'
-import { getAuthenticate, getFirestore } from '@/lib/firebase'
+import { getAuthenticate } from '@/lib/firebase'
 import { UserContext } from '@/contexts/UserContext'
+import { UserRepository } from '@/repositories/UserRepository'
 
 type User = {
   uid: string | null
@@ -16,28 +16,26 @@ const NewUser = (): User => {
 }
 
 const logSignedIn = async (uid: string) => {
-  const db = getFirestore()
-  const snap = await getDoc(doc(db, 'users', uid))
-  if (snap.exists()) {
-    const now = new Date()
-    const user = snap.data()
-    if (now.getDate > user.lastSignedIn.toDate().getDate()) {
-      setDoc(doc(db, 'users', uid), {
-        lastSignedIn: now,
-        signInCount: user.signInCount + 1,
-      })
-    }
-  } else {
-    setDoc(doc(db, 'users', uid), {
-      lastSignedIn: new Date(),
+  const repo = new UserRepository()
+  const user = await repo.get(uid)
+  const now = new Date()
+
+  if (!user) {
+    repo.set(uid, {
+      lastSignedIn: now,
       signInCount: 1,
+    })
+  } else if (now.getDate() > user.lastSignedIn.getDate()) {
+    repo.set(uid, {
+      lastSignedIn: now,
+      signInCount: user.signInCount + 1,
     })
   }
 }
 
 const UserProvider: FC = ({ children }) => {
   const [user, setUser] = useState<User>(NewUser())
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     onAuthStateChanged(getAuthenticate(), (user) => {
@@ -57,7 +55,11 @@ const UserProvider: FC = ({ children }) => {
     })
   }, [])
 
-  return <UserContext.Provider value={{ user, loading }}>{children}</UserContext.Provider>
+  return (
+    <UserContext.Provider value={{ user, loading }}>
+      {children}
+    </UserContext.Provider>
+  )
 }
 
 export { UserProvider }

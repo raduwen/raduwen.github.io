@@ -92,8 +92,8 @@ const daytime = {
     },
     userProfile: {
       bg: 'rgb(0, 0, 64)',
-      text: 'rgb(255, 255, 255)'
-    }
+      text: 'rgb(255, 255, 255)',
+    },
   },
 }
 
