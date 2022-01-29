@@ -24,7 +24,7 @@ const SubMenu = ({ current }: SubMenuProps) => {
   }, [current])
 
   return (
-    <Box as="aside" bg="bg" h="100%">
+    <Box as="aside" bg="bg" minH="calc(100% - 74px)">
       <nav>
         <section>
           <Box>
