@@ -11,7 +11,7 @@ const Footer = () => (
     bg="bg"
     pb="1"
   >
-    <Text>&copy; raduwen. v0.5.2</Text>
+    <Text>&copy; raduwen. v0.6.0</Text>
   </Box>
 )
 
