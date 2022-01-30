@@ -63,7 +63,7 @@ class ApexClient {
 
   getSessions(platform: Platform, platformUserIdentifier: string): Promise<SessionList> {
     return new Promise((resolve, reject) => {
-      fetch(`${this.baseURL} / profile / ${platform} / ${platformUserIdentifier} / sessions`, {
+      fetch(`${this.baseURL}/profile/${platform}/${platformUserIdentifier}/sessions`, {
         headers: this.headers
       })
         .then(res => res.json())
