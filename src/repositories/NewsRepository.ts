@@ -8,30 +8,47 @@ type NewsEntity = {
 
 class NewsRepository {
   async getLatest(count = 10): Promise<NewsEntity[]> {
-    const firestore = getFirestore()
+    if (sessionStorage.getItem('news') === null) {
+      const firestore = getFirestore()
 
-    return new Promise((resolve, reject) => {
-      const q = query(
-        collection(firestore, 'news'),
-        orderBy('date', 'desc'),
-        limit(count),
-      )
-      getDocs(q)
-        .then((docs) => {
-          const ns: NewsEntity[] = []
-          docs.forEach((doc) => {
-            const data = doc.data()
-            ns.push({
-              date: data.date.toDate(),
-              topic: data.topic,
+      return new Promise((resolve, reject) => {
+        const q = query(
+          collection(firestore, 'news'),
+          orderBy('date', 'desc'),
+          limit(count),
+        )
+        getDocs(q)
+          .then((docs) => {
+            const ns: NewsEntity[] = []
+            docs.forEach((doc) => {
+              const data = doc.data()
+              ns.push({
+                date: data.date.toDate(),
+                topic: data.topic,
+              })
             })
+            sessionStorage.setItem('news', JSON.stringify(ns))
+            resolve(ns)
+          })
+          .catch((e) => {
+            reject(e)
+          })
+      })
+    } else {
+      return new Promise((resolve, reject) => {
+        try {
+          const ns = JSON.parse(sessionStorage.getItem('news')).map((n) => {
+            return {
+              date: new Date(n.date),
+              topic: n.topic,
+            }
           })
           resolve(ns)
-        })
-        .catch((e) => {
+        } catch (e) {
           reject(e)
-        })
-    })
+        }
+      })
+    }
   }
 }
 

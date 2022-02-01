@@ -16,7 +16,7 @@ const News = () => {
   const [news, setNews] = useState<NewsEntity[]>([])
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       const repo = new NewsRepository()
       const data = await repo.getLatest()
       setNews(data)
