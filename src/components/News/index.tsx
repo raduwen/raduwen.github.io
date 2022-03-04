@@ -6,7 +6,7 @@ import type { NewsEntity } from '@/repositories/NewsRepository'
 import { NewsRepository } from '@/repositories/NewsRepository'
 
 const NewsRecord = ({ date, topic }: { date: string; topic: string }) => (
-  <Box display="flex" fontSize="md">
+  <Box display="flex">
     <Box>{date}</Box>
     <Box ml={4}>{topic}</Box>
   </Box>

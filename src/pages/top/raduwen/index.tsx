@@ -18,7 +18,7 @@ const RaduwenPage = () => {
 
         <Box mt="16" px="16" display="flex" justifyContent="space-between">
           <Box>
-            <UnorderedList fontSize="lg">
+            <UnorderedList>
               <ListItem>名前 : ラドウェン(raduwen)</ListItem>
               <ListItem>血液型 : O型</ListItem>
               <ListItem>誕生日 : 12月14日</ListItem>
@@ -36,7 +36,7 @@ const RaduwenPage = () => {
           </Box>
         </Box>
         <Box mt="16" px="16" display="flex" justifyContent="space-between">
-          <Text fontSize="md">
+          <Text>
             わしの環境は<NextLink passHref href="/top/raduwen/env"><Link color="red">ここ</Link></NextLink>じゃ
           </Text>
         </Box>
