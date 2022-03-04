@@ -17,7 +17,7 @@ const EnvironmentPage = () => {
 
           <Box mt="16" px="16" display="flex" flexDirection="column">
             <Heading as="h2" size="md">ほぼゲーム用</Heading>
-            <UnorderedList fontSize="lg" mt="4">
+            <UnorderedList mt="4">
               <ListItem>OS : Windows 10 Pro</ListItem>
               <ListItem>Mother : GIGABYTE GA-B75M-D3H</ListItem>
               <ListItem>CPU : Intel Core i7-2600</ListItem>
@@ -28,7 +28,7 @@ const EnvironmentPage = () => {
 
           <Box mt="16" px="16" display="flex" flexDirection="column">
             <Heading as="h2" size="md">開発用</Heading>
-            <UnorderedList fontSize="lg" mt="4">
+            <UnorderedList mt="4">
               <ListItem>Mac mini (2018)</ListItem>
               <ListItem>OS : macOS Monterey</ListItem>
               <ListItem>CPU : Intel Core i5-8500B</ListItem>
@@ -39,7 +39,7 @@ const EnvironmentPage = () => {
 
           <Box mt="16" px="16" display="flex" flexDirection="column">
             <Heading as="h2" size="md">サーバ用</Heading>
-            <UnorderedList fontSize="lg" mt="4">
+            <UnorderedList mt="4">
               <ListItem>Raspberry Pi 4B 8GB</ListItem>
               <ListItem>Raspberry Pi 3B+</ListItem>
               <ListItem>Raspberry Pi 3B+</ListItem>
@@ -53,7 +53,7 @@ const EnvironmentPage = () => {
           <Heading textAlign="center">音響</Heading>
 
           <Box mt="16" px="16" display="flex" flexDirection="column">
-            <UnorderedList fontSize="lg" mt="4">
+            <UnorderedList mt="4">
               <ListItem>I/F : Steinberg UR242</ListItem>
               <ListItem>マルチエフェクタ : Line 6 POD X3</ListItem>
               <ListItem>ギターシンセ : Roland GR-55</ListItem>
