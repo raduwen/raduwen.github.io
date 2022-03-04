@@ -25,7 +25,7 @@ const logSignedIn = async (uid: string) => {
       lastSignedIn: now,
       signInCount: 1,
     })
-  } else if (now.getDate() > user.lastSignedIn.getDate()) {
+  } else if (now.getDate() > user.lastSignedIn.getDate() || now.getMonth() > user.lastSignedIn.getMonth() || now.getFullYear() > user.lastSignedIn.getFullYear()) {
     repo.set(uid, {
       lastSignedIn: now,
       signInCount: user.signInCount + 1,
