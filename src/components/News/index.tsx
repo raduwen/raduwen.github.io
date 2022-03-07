@@ -1,9 +1,38 @@
-import { useState, useEffect } from 'react'
-import { Box, Heading } from '@chakra-ui/react'
+import { useState, useEffect, FormEvent } from 'react'
+import { Box, Stack, Heading, Input, Button } from '@chakra-ui/react'
 import { format } from 'date-fns'
 
 import type { NewsEntity } from '@/repositories/NewsRepository'
 import { NewsRepository } from '@/repositories/NewsRepository'
+import { useUser } from '@/hooks/useUser'
+
+const CreateNewsForm = () => {
+  const [topic, setTopic] = useState("")
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    if (topic !== "") {
+      const repo = new NewsRepository()
+      await repo.create({ topic, date: new Date() })
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <Stack direction="row">
+        <Input
+          type="text"
+          name="topic"
+          bg="white"
+          onChange={(e) => {
+            setTopic(e.currentTarget.value)
+          }}
+        />
+        <Button type="submit">create</Button>
+      </Stack>
+    </form>
+  )
+}
 
 const NewsRecord = ({ date, topic }: { date: string; topic: string }) => (
   <Box display="flex">
@@ -14,6 +43,7 @@ const NewsRecord = ({ date, topic }: { date: string; topic: string }) => (
 
 const News = () => {
   const [news, setNews] = useState<NewsEntity[]>([])
+  const { user } = useUser();
 
   useEffect(() => {
     (async () => {
@@ -27,6 +57,7 @@ const News = () => {
     <Box>
       <Heading>NEWS</Heading>
       <Box mt={2}>
+        {user?.isAdmin && (<CreateNewsForm />)}
         {news.map((r) => (
           <NewsRecord
             key={r.date.getTime()}

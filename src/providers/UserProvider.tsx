@@ -3,16 +3,18 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { getAuthenticate } from '@/lib/firebase'
 import { UserContext } from '@/contexts/UserContext'
 import { UserRepository } from '@/repositories/UserRepository'
+import { UserRoleRepository } from '@/repositories/UserRoleRepository'
 
 type User = {
   uid: string | null
   name: string | null
   photoURL: string | null
   isAnonymous: boolean
+  isAdmin: boolean
 }
 
 const NewUser = (): User => {
-  return { uid: null, name: null, photoURL: null, isAnonymous: true }
+  return { uid: null, name: null, photoURL: null, isAnonymous: true, isAdmin: false }
 }
 
 const logSignedIn = async (uid: string) => {
@@ -38,14 +40,18 @@ const UserProvider: FC = ({ children }) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    onAuthStateChanged(getAuthenticate(), (user) => {
+    onAuthStateChanged(getAuthenticate(), async (user) => {
       setLoading(true)
+
       if (user) {
+        const repo = new UserRoleRepository()
+        const role = await repo.get(user.uid)
         setUser({
           uid: user.uid,
           name: user.displayName,
           photoURL: user.photoURL,
           isAnonymous: user.isAnonymous,
+          isAdmin: role.admin,
         })
         logSignedIn(user.uid)
       } else {

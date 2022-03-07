@@ -1,4 +1,4 @@
-import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore'
+import { collection, query, orderBy, limit, getDocs, addDoc } from 'firebase/firestore'
 import { getFirestore } from '@/lib/firebase'
 
 type NewsEntity = {
@@ -49,6 +49,24 @@ class NewsRepository {
         }
       })
     }
+  }
+
+  async create(news: NewsEntity): Promise<NewsEntity> {
+    const firestore = getFirestore()
+
+    return new Promise((resolve, reject) => {
+      if (news.topic === "") {
+        reject("invalid: topic required")
+      }
+      news.date = new Date()
+      addDoc(collection(firestore, 'news'), news)
+        .then(() => {
+          resolve(news)
+        })
+        .catch((e) => {
+          reject(e)
+        })
+    })
   }
 }
 
