@@ -6,7 +6,7 @@ import type { NewsEntity } from '@/repositories/NewsRepository'
 import { NewsRepository } from '@/repositories/NewsRepository'
 import { useUser } from '@/hooks/useUser'
 
-const CreateNewsForm = () => {
+const CreateNewsForm = ({ onCreated }) => {
   const [topic, setTopic] = useState("")
 
   const handleSubmit = async (e: FormEvent) => {
@@ -14,6 +14,7 @@ const CreateNewsForm = () => {
     if (topic !== "") {
       const repo = new NewsRepository()
       await repo.create({ topic, date: new Date() })
+      onCreated()
     }
   }
 
@@ -45,6 +46,12 @@ const News = () => {
   const [news, setNews] = useState<NewsEntity[]>([])
   const { user } = useUser();
 
+  const handleOnCreated = async () => {
+    const repo = new NewsRepository()
+    const data = await repo.getLatest(10, true)
+    setNews(data)
+  }
+
   useEffect(() => {
     (async () => {
       const repo = new NewsRepository()
@@ -57,7 +64,7 @@ const News = () => {
     <Box>
       <Heading>NEWS</Heading>
       <Box mt={2}>
-        {user?.isAdmin && (<CreateNewsForm />)}
+        {user?.isAdmin && (<CreateNewsForm onCreated={handleOnCreated} />)}
         {news.map((r) => (
           <NewsRecord
             key={r.date.getTime()}

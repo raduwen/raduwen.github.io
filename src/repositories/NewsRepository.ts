@@ -7,8 +7,8 @@ type NewsEntity = {
 }
 
 class NewsRepository {
-  async getLatest(count = 10): Promise<NewsEntity[]> {
-    if (sessionStorage.getItem('news') === null) {
+  async getLatest(count = 10, force = false): Promise<NewsEntity[]> {
+    if (sessionStorage.getItem('news') === null || force) {
       const firestore = getFirestore()
 
       return new Promise((resolve, reject) => {
