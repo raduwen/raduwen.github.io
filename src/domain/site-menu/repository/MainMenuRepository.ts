@@ -1,9 +1,4 @@
-type MainMenuEntity = {
-  color: string
-  text: string
-  sub: string
-  image: string
-}
+import type { MainMenuEntity } from '@/domain/site-menu/entity';
 
 class MainMenuRepository {
   async getAll(): Promise<MainMenuEntity[]> {
@@ -48,10 +43,9 @@ class MainMenuRepository {
           sub: 'yobi2',
           image: '/images/construction.png',
         },
-      ])
-    })
+      ]);
+    });
   }
 }
 
-export type { MainMenuEntity }
-export { MainMenuRepository }
+export { MainMenuRepository };

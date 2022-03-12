@@ -1,0 +1,1 @@
+export { MainMenuRepository } from './MainMenuRepository';
