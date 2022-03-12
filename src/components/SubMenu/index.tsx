@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Box } from '@chakra-ui/react'
 
-import type { SubMenuEntity } from '@/repositories/SubMenuRepository'
-import { SubMenuRepository } from '@/repositories/SubMenuRepository'
+import type { SubMenuEntity } from '@/domain/site-menu/entity';
+import { SubMenuRepository } from '@/domain/site-menu/repository';
 
 import { Topic } from './Topic'
 import { MenuList } from './MenuList'

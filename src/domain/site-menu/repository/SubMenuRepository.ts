@@ -1,13 +1,4 @@
-type SubMenuItemEntity = {
-  href: string
-  text: string
-  disabled?: boolean
-}
-
-type SubMenuEntity = {
-  topic?: string
-  items: SubMenuItemEntity[]
-}
+import type { SubMenuEntity } from '@/domain/site-menu/entity';
 
 const data = {
   top: {
@@ -68,5 +59,4 @@ class SubMenuRepository {
   }
 }
 
-export type { SubMenuEntity }
 export { SubMenuRepository }
