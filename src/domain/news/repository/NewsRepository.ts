@@ -1,39 +1,36 @@
-import { collection, query, orderBy, limit, getDocs, addDoc } from 'firebase/firestore'
-import { getFirestore } from '@/lib/firebase'
+import { collection, query, orderBy, limit, getDocs, addDoc } from 'firebase/firestore';
+import { getFirestore } from '@/lib/firebase';
 
-type NewsEntity = {
-  date: Date
-  topic: string
-}
+import type { NewsEntity } from '@/domain/news/entity';
 
 class NewsRepository {
   async getLatest(count = 10, force = false): Promise<NewsEntity[]> {
     if (sessionStorage.getItem('news') === null || force) {
-      const firestore = getFirestore()
+      const firestore = getFirestore();
 
       return new Promise((resolve, reject) => {
         const q = query(
           collection(firestore, 'news'),
           orderBy('date', 'desc'),
           limit(count),
-        )
+        );
         getDocs(q)
           .then((docs) => {
-            const ns: NewsEntity[] = []
+            const ns: NewsEntity[] = [];
             docs.forEach((doc) => {
-              const data = doc.data()
+              const data = doc.data();
               ns.push({
                 date: data.date.toDate(),
                 topic: data.topic,
-              })
-            })
-            sessionStorage.setItem('news', JSON.stringify(ns))
-            resolve(ns)
+              });
+            });
+            sessionStorage.setItem('news', JSON.stringify(ns));
+            resolve(ns);
           })
           .catch((e) => {
-            reject(e)
-          })
-      })
+            reject(e);
+          });
+      });
     } else {
       return new Promise((resolve, reject) => {
         try {
@@ -41,34 +38,33 @@ class NewsRepository {
             return {
               date: new Date(n.date),
               topic: n.topic,
-            }
-          })
-          resolve(ns)
+            };
+          });
+          resolve(ns);
         } catch (e) {
-          reject(e)
+          reject(e);
         }
-      })
+      });
     }
   }
 
   async create(news: NewsEntity): Promise<NewsEntity> {
-    const firestore = getFirestore()
+    const firestore = getFirestore();
 
     return new Promise((resolve, reject) => {
       if (news.topic === "") {
-        reject("invalid: topic required")
+        reject("invalid: topic required");
       }
-      news.date = new Date()
+      news.date = new Date();
       addDoc(collection(firestore, 'news'), news)
         .then(() => {
-          resolve(news)
+          resolve(news);
         })
         .catch((e) => {
-          reject(e)
-        })
+          reject(e);
+        });
     })
   }
 }
 
-export type { NewsEntity }
-export { NewsRepository }
+export { NewsRepository };

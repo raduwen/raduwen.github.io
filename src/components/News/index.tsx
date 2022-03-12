@@ -2,8 +2,8 @@ import { useState, useEffect, FormEvent } from 'react'
 import { Box, Stack, Heading, Input, Button } from '@chakra-ui/react'
 import { format } from 'date-fns'
 
-import type { NewsEntity } from '@/repositories/NewsRepository'
-import { NewsRepository } from '@/repositories/NewsRepository'
+import type { NewsEntity } from '@/domain/news/entity';
+import { NewsRepository } from '@/domain/news/repository';
 import { useUser } from '@/hooks/useUser'
 
 const CreateNewsForm = ({ onCreated }) => {
