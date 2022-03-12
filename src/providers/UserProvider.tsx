@@ -2,8 +2,7 @@ import { FC, useState, useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { getAuthenticate } from '@/lib/firebase'
 import { UserContext } from '@/contexts/UserContext'
-import { UserRepository } from '@/domain/user/repository';
-import { UserRoleRepository } from '@/repositories/UserRoleRepository'
+import { UserRepository, UserRoleRepository  } from '@/domain/user/repository';
 
 type User = {
   uid: string | null
