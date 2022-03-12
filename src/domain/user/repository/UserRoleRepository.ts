@@ -1,13 +1,11 @@
-import { doc, getDoc } from 'firebase/firestore'
-import { getFirestore } from '@/lib/firebase'
+import { doc, getDoc } from 'firebase/firestore';
+import { getFirestore } from '@/lib/firebase';
 
-type UserRoleEntity = {
-  admin: boolean
-}
+import type { UserRoleEntity } from '@/domain/user/entity';
 
 class UserRoleRepository {
   async get(uid: string): Promise<UserRoleEntity | undefined> {
-    const firestore = getFirestore()
+    const firestore = getFirestore();
 
     return new Promise((resolve, reject) => {
       getDoc(doc(firestore, 'user_role', uid))
@@ -16,15 +14,14 @@ class UserRoleRepository {
             const role = snap.data();
             resolve({
               admin: role.admin
-            })
+            });
           }
         })
         .catch((e) => {
           reject(e)
-        })
-    })
+        });
+    });
   }
 }
 
-export type { UserRoleEntity }
-export { UserRoleRepository }
+export { UserRoleRepository };
