@@ -1,32 +1,29 @@
-import { doc, getDoc, setDoc } from 'firebase/firestore'
-import { getFirestore } from '@/lib/firebase'
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { getFirestore } from '@/lib/firebase';
 
-type UserEntity = {
-  lastSignedIn: Date
-  signInCount: number
-}
+import type { UserEntity } from '@/domain/user/entity';
 
 class UserRepository {
   async get(uid: string): Promise<UserEntity | undefined> {
-    const firestore = getFirestore()
+    const firestore = getFirestore();
 
     return new Promise((resolve, reject) => {
       getDoc(doc(firestore, 'users', uid))
         .then((snap) => {
           if (snap.exists()) {
-            const user = snap.data()
+            const user = snap.data();
             resolve({
               lastSignedIn: user.lastSignedIn.toDate(),
               signInCount: user.signInCount,
-            })
+            });
           } else {
-            resolve(undefined)
+            resolve(undefined);
           }
         })
         .catch((e) => {
-          reject(e)
-        })
-    })
+          reject(e);
+        });
+    });
   }
 
   async set(uid: string, user: UserEntity) {
@@ -35,14 +32,13 @@ class UserRepository {
     return new Promise((resolve, reject) => {
       setDoc(doc(firestore, 'users', uid), user)
         .then(() => {
-          resolve(user)
+          resolve(user);
         })
         .catch((e) => {
-          reject(e)
-        })
-    })
+          reject(e);
+        });
+    });
   }
 }
 
-export type { UserEntity }
-export { UserRepository }
+export { UserRepository };
