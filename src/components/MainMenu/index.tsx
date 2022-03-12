@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Box } from '@chakra-ui/react'
 
-import type { MainMenuEntity } from '@/repositories/MainMenuRepository'
-import { MainMenuRepository } from '@/repositories/MainMenuRepository'
+import type { MainMenuEntity } from '@/domain/site-menu/entity'
+import { MainMenuRepository } from '@/domain/site-menu/repository'
 
 import { MenuList } from './MenuList'
 import { MenuListItem } from './MenuListItem'
