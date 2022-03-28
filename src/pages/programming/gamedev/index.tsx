@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { format } from 'date-fns'
 import Head from 'next/head';
 import Link from 'next/link';
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Stack, Heading } from '@chakra-ui/react';
 
 import { MainLayout } from '@/layouts/MainLayout';
 import { Board } from '@/components/Board';
@@ -29,15 +29,17 @@ const GameDevPage = () => {
         <Heading textAlign="center">ゲーム開発日記</Heading>
 
         <Box mt="16" px="16" display="flex" justifyContent="space-between">
-          {
-            posts.map((post) => (
-              <Link key={post.id} href={{ pathname: `/programming/gamedev/[id]`, query: { id: post.id } }} >
-                <a>
-                  {format(post.date, 'yyyy/MM/dd')} {post.title}
-                </a>
-              </Link>
-            ))
-          }
+          <Stack direction="column">
+            {
+              posts.map((post) => (
+                <Link key={post.id} href={{ pathname: `/programming/gamedev/[id]`, query: { id: post.id } }} >
+                  <a>
+                    {format(post.date, 'yyyy/MM/dd')} {post.title}
+                  </a>
+                </Link>
+              ))
+            }
+          </Stack>
         </Box>
       </Board>
     </>
