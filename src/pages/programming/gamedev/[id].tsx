@@ -1,5 +1,6 @@
 import { format } from 'date-fns-tz'
 import Head from 'next/head';
+import Image from 'next/image';
 import { MainLayout } from '@/layouts/MainLayout';
 import { Box, Heading, Text } from '@chakra-ui/react';
 import { Board } from '@/components/Board';
@@ -25,6 +26,10 @@ const GameDevPostPage = ({ post }) => {
                   return <Text key={i} {...elem.attributes}>{elem.body}</Text>;
                 case 'h2':
                   return <Heading key={i} as="h2" size="md" mt="8" mb="4" {...elem.attributes}>{elem.body}</Heading>;
+                case 'image':
+                  return <Image key={i} {...elem.attributes} />;
+                default:
+                  return null;
               }
             })}
           </Box>
