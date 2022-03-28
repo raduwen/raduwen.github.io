@@ -20,8 +20,8 @@ const data = {
     items: [{ href: '#', text: 'game', disabled: true }],
   },
   prog: {
-    topic: 'プログラミング\nつらい...',
-    items: [{ href: '#', text: 'prog', disabled: true }],
+    topic: 'プログラミング\n大変...',
+    items: [{ href: '/programming/gamedev', text: 'ゲーム開発' }],
   },
   music: {
     topic: '音楽\n楽しい!',
