@@ -3,6 +3,24 @@ import type { PostEntity, PostWithoutBodyEntity } from '@/domain/gamedev-diary/e
 
 const posts: PostEntity[] = [
   {
+    id: 'pecaroid-1',
+    project: 'pecaroid',
+    title: 'Pecaroid#1 基礎の基礎',
+    date: zonedTimeToUtc('2022-03-28T19:39:00', 'Asia/Tokyo'),
+    body: [
+      { type: 'text', body: 'ウィンドウを表示する、メインループといった基礎的な部分を作った。' },
+      { type: 'text', body: 'アプリケーションを管理するApplicationクラス、ゲームを管理するGameクラスを分離。' },
+      { type: 'text', body: 'Applicationにsf::RenderWindow, Gameを持たせて、一旦ゲームのメインループはApplication内で持たせた。' },
+      { type: 'text', body: 'ウィンドウの管理はApplicationでやるようにしたので、イベント処理や画面クリアなどはApplicationでやらせる。' },
+      { type: 'text', body: 'ゲームの更新処理と描画処理をゲームクラスに担わせた。' },
+      { type: 'text', body: 'と言っても中は空なんだけど…。' },
+      { type: 'image', attributes: { src: '/images/pecaroid1-1.png', layout: 'responsive', width: '752', height: '620' } },
+      { type: 'h2', body: 'その他' },
+      { type: 'text', body: 'マルチプラットフォーム対応する上でビルドも楽にしたかったのでCMakeを導入。' },
+      { type: 'text', body: 'ドキュメントを残した方がいいのでDoxygenも導入。' },
+    ]
+  },
+  {
     id: 'pecaroid-0',
     project: 'pecaroid',
     title: 'プロジェクト「Pecaroid」 はじめに',
@@ -26,7 +44,7 @@ const posts: PostEntity[] = [
       { type: 'h2', body: '目的' },
       { type: 'text', body: 'ゲーム(コーディング)を作ることを楽しむ。' },
       { type: 'h2', body: 'なんでC++?' },
-      { type: 'text', body: 'goとかでもよかったけど設計方針に合うのが見付けられなかった。' },
+      { type: 'text', body: 'goとかでもよかったけど設計方針に合うライブラリがパッと見付けられなかった。' },
       { type: 'text', body: 'C/C++のバインド系は最新に追従されてないことがあるのでイヤだ。' },
       { type: 'h2', body: 'なんでSFML?' },
       { type: 'text', body: 'UnityとかUnrealとかよりもコーディングしないといけないことが多いから。' },
