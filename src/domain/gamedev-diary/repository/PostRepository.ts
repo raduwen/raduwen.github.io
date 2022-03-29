@@ -3,6 +3,21 @@ import type { PostEntity, PostWithoutBodyEntity } from '@/domain/gamedev-diary/e
 
 const posts: PostEntity[] = [
   {
+    id: 'pecaroid-2',
+    project: 'pecaroid',
+    title: 'Pecaroid#2 シーンの管理',
+    date: zonedTimeToUtc('2022-03-29T17:50:00', 'Asia/Tokyo'),
+    body: [
+      { type: 'image', attributes: { src: '/images/pecaroid2-1.png', layout: 'responsive', width: '752', height: '640' } },
+      { type: 'text', body: 'シーンの管理を実装しました。' },
+      { type: 'text', body: 'プレイ→メニュー→プレイみたいな時にどこからメニューに来たってのをメニューが知らなくてもいいようにスタックするようにしました。' },
+      { type: 'image', attributes: { src: '/images/pecaroid2-2.png', layout: 'responsive', width: '542', height: '55' } },
+      { type: 'h2', body: 'アセット管理' },
+      { type: 'text', body: 'デバッグプリントを画面にしたかったのでフォントを管理したくなりました。' },
+      { type: 'text', body: 'プロトタイプとしてFontManagerを用意しました。' },
+    ]
+  },
+  {
     id: 'pecaroid-1',
     project: 'pecaroid',
     title: 'Pecaroid#1 基礎の基礎',
