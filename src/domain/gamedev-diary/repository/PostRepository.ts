@@ -3,6 +3,21 @@ import type { PostEntity, PostWithoutBodyEntity } from '@/domain/gamedev-diary/e
 
 const posts: PostEntity[] = [
   {
+    id: 'pecaroid-3',
+    project: 'pecaroid',
+    title: 'Pecaroid#3 入力の管理',
+    date: zonedTimeToUtc('2022-03-30T17:00:00', 'Asia/Tokyo'),
+    body: [
+      { type: 'text', body: 'Aボタンはxxxとyyyと…という具合に複数設定できるように設計。' },
+      { type: 'text', body: 'また入力元はキーボードとパッドそれぞれ対応しておいた。' },
+      { type: 'text', body: '一旦マウスは無視。ゲーム内で使う予定はあんまないので。' },
+      { type: 'text', body: 'あとこの機能のデバッグ用のシーンもとりあえず追加。' },
+      { type: 'text', body: '将来的にゲーム内から入力設定をできるようにしないといけない。' },
+      { type: 'text', body: '複数接続したときとかパッド周りはややめんどいことになりそう。' },
+      { type: 'image', attributes: { src: '/images/pecaroid3-1.png', layout: 'responsive', width: '642', height: '512' } }
+    ]
+  },
+  {
     id: 'pecaroid-2',
     project: 'pecaroid',
     title: 'Pecaroid#2 シーンの管理',
