@@ -3,6 +3,21 @@ import type { PostEntity, PostWithoutBodyEntity } from '@/domain/gamedev-diary/e
 
 const posts: PostEntity[] = [
   {
+    id: 'pecaroid-4',
+    project: 'pecaroid',
+    title: 'Pecaroid#4 FPSの計算',
+    date: zonedTimeToUtc('2022-03-31T16:25:00', 'Asia/Tokyo'),
+    body: [
+      { type: 'h2', body: 'FPS' },
+      { type: 'text', body: '1フレーム間の処理時間からFPSを計算するクラスを追加しました。' },
+      { type: 'text', body: '尚、FPSによって制御するような仕組みは導入しません。' },
+      { type: 'text', body: '一旦計算してどういう方針で開発するのがいいか探っていくことにします。' },
+      { type: 'h2', body: 'デバッグUI' },
+      { type: 'text', body: 'まだまだ簡易版ですがデバッグ用のUIを追加しました。' },
+      { type: 'image', attributes: { src: '/images/pecaroid4-1.png', layout: 'responsive', width: '642', height: '512' } }
+    ]
+  },
+  {
     id: 'pecaroid-3',
     project: 'pecaroid',
     title: 'Pecaroid#3 入力の管理',
