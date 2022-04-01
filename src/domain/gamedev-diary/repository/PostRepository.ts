@@ -3,6 +3,17 @@ import type { PostEntity, PostWithoutBodyEntity } from '@/domain/gamedev-diary/e
 
 const posts: PostEntity[] = [
   {
+    id: 'pecaroid-5',
+    project: 'pecaroid',
+    title: 'Pecaroid#5 デバッグメニュー',
+    date: zonedTimeToUtc('2022-04-01T16:00:00', 'Asia/Tokyo'),
+    body: [
+      { type: 'text', body: 'デバッグ機能を楽に使えるようにデバッグメニューを実装しました。' },
+      { type: 'text', body: 'ここで少しアーキテクチャとか設計しなおしたくなってきているので、一旦整理のフェーズに入りたい。'},
+      { type: 'image', attributes: { src: '/images/pecaroid5-1.png', layout: 'responsive', width: '642', height: '512' } }
+    ]
+  },
+  {
     id: 'pecaroid-4',
     project: 'pecaroid',
     title: 'Pecaroid#4 FPSの計算',
