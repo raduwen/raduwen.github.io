@@ -21,7 +21,8 @@ const data = {
   },
   prog: {
     topic: 'プログラミング\n大変...',
-    items: [{ href: '/programming/gamedev', text: 'ゲーム開発' }],
+    items: [{ href: '#', text: 'ゲーム開発', disabled: true}],
+    // items: [{ href: '/programming/gamedev', text: 'ゲーム開発' }],
   },
   music: {
     topic: '音楽\n楽しい!',
