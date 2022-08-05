@@ -34,7 +34,7 @@ const logSignedIn = async (uid: string) => {
   }
 }
 
-const UserProvider: FC = ({ children }) => {
+const UserProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User>(NewUser())
   const [loading, setLoading] = useState(true)
 

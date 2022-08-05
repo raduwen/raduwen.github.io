@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { ThemeContext } from '@/contexts/ThemeContext'
 import { theme, dateToThemeName } from '@/themes'
 
-const ThemeProvider: FC = ({ children }) => {
+const ThemeProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
   const [now, setNow] = useState(new Date())
 
   useEffect(() => {
