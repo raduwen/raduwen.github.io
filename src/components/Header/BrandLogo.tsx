@@ -7,8 +7,8 @@ const BrandLogo = () => {
       <Image
         alt="brand logo"
         src="/images/brand_logo.png"
-        width="134px"
-        height="44px"
+        width={134}
+        height={44}
       />
     </Box>
   )

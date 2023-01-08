@@ -14,7 +14,7 @@ const TopPage = () => {
       </Head>
       <Board>
         <Box display="flex" justifyContent="center">
-          <Image alt="logo" src="/images/logo.png" width="332" height="32" />
+          <Image alt="logo" src="/images/logo.png" width={332} height={32} />
         </Box>
 
         <Box mt="16">
