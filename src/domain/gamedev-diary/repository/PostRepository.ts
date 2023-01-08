@@ -10,7 +10,7 @@ const posts: PostEntity[] = [
     body: [
       { type: 'text', body: 'デバッグ機能を楽に使えるようにデバッグメニューを実装しました。' },
       { type: 'text', body: 'ここで少しアーキテクチャとか設計しなおしたくなってきているので、一旦整理のフェーズに入りたい。'},
-      { type: 'image', attributes: { src: '/images/pecaroid5-1.png', layout: 'responsive', width: '642', height: '512' } }
+      { type: 'image', attributes: { src: '/images/pecaroid5-1.png', layout: 'responsive', width: 642, height: 512, alt: 'Pecaroid' } }
     ]
   },
   {
@@ -25,7 +25,7 @@ const posts: PostEntity[] = [
       { type: 'text', body: '一旦計算してどういう方針で開発するのがいいか探っていくことにします。' },
       { type: 'h2', body: 'デバッグUI' },
       { type: 'text', body: 'まだまだ簡易版ですがデバッグ用のUIを追加しました。' },
-      { type: 'image', attributes: { src: '/images/pecaroid4-1.png', layout: 'responsive', width: '642', height: '512' } }
+      { type: 'image', attributes: { src: '/images/pecaroid4-1.png', layout: 'responsive', width: 642, height: 512, alt: 'Pecaroid' } }
     ]
   },
   {
@@ -40,7 +40,7 @@ const posts: PostEntity[] = [
       { type: 'text', body: 'あとこの機能のデバッグ用のシーンもとりあえず追加。' },
       { type: 'text', body: '将来的にゲーム内から入力設定をできるようにしないといけない。' },
       { type: 'text', body: '複数接続したときとかパッド周りはややめんどいことになりそう。' },
-      { type: 'image', attributes: { src: '/images/pecaroid3-1.png', layout: 'responsive', width: '642', height: '512' } }
+      { type: 'image', attributes: { src: '/images/pecaroid3-1.png', layout: 'responsive', width: 642, height: 512, alt: 'Pecaroid' } }
     ]
   },
   {
@@ -49,10 +49,10 @@ const posts: PostEntity[] = [
     title: 'Pecaroid#2 シーンの管理',
     date: zonedTimeToUtc('2022-03-29T17:50:00', 'Asia/Tokyo'),
     body: [
-      { type: 'image', attributes: { src: '/images/pecaroid2-1.png', layout: 'responsive', width: '752', height: '640' } },
+      { type: 'image', attributes: { src: '/images/pecaroid2-1.png', layout: 'responsive', width: 752, height: 640, alt: 'Pecaroid' } },
       { type: 'text', body: 'シーンの管理を実装しました。' },
       { type: 'text', body: 'プレイ→メニュー→プレイみたいな時にどこからメニューに来たってのをメニューが知らなくてもいいようにスタックするようにしました。' },
-      { type: 'image', attributes: { src: '/images/pecaroid2-2.png', layout: 'responsive', width: '542', height: '55' } },
+      { type: 'image', attributes: { src: '/images/pecaroid2-2.png', layout: 'responsive', width: 542, height: 55, alt: 'Pecaroid' } },
       { type: 'h2', body: 'アセット管理' },
       { type: 'text', body: 'デバッグプリントを画面にしたかったのでフォントを管理したくなりました。' },
       { type: 'text', body: 'プロトタイプとしてFontManagerを用意しました。' },
@@ -70,7 +70,7 @@ const posts: PostEntity[] = [
       { type: 'text', body: 'ウィンドウの管理はApplicationでやるようにしたので、イベント処理や画面クリアなどはApplicationでやらせる。' },
       { type: 'text', body: 'ゲームの更新処理と描画処理をゲームクラスに担わせた。' },
       { type: 'text', body: 'と言っても中は空なんだけど…。' },
-      { type: 'image', attributes: { src: '/images/pecaroid1-1.png', layout: 'responsive', width: '752', height: '620' } },
+      { type: 'image', attributes: { src: '/images/pecaroid1-1.png', layout: 'responsive', width: 752, height: 620, alt: 'Pecaroid' } },
       { type: 'h2', body: 'その他' },
       { type: 'text', body: 'マルチプラットフォーム対応する上でビルドも楽にしたかったのでCMakeを導入。' },
       { type: 'text', body: 'ドキュメントを残した方がいいのでDoxygenも導入。' },
