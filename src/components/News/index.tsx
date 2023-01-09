@@ -2,16 +2,16 @@ import { useState, useEffect, FormEvent } from 'react'
 import { Box, Stack, Heading, Input, Button } from '@chakra-ui/react'
 import { format } from 'date-fns'
 
-import type { NewsEntity } from '@/domain/news/entity';
-import { NewsRepository } from '@/domain/news/repository';
+import type { NewsEntity } from '@/domain/news/entity'
+import { NewsRepository } from '@/domain/news/repository'
 import { useUser } from '@/hooks/useUser'
 
 const CreateNewsForm = ({ onCreated }) => {
-  const [topic, setTopic] = useState("")
+  const [topic, setTopic] = useState('')
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    if (topic !== "") {
+    if (topic !== '') {
       const repo = new NewsRepository()
       await repo.create({ topic, date: new Date() })
       onCreated()
@@ -44,7 +44,7 @@ const NewsRecord = ({ date, topic }: { date: string; topic: string }) => (
 
 const News = () => {
   const [news, setNews] = useState<NewsEntity[]>([])
-  const { user } = useUser();
+  const { user } = useUser()
 
   const handleOnCreated = async () => {
     const repo = new NewsRepository()
@@ -53,7 +53,7 @@ const News = () => {
   }
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       const repo = new NewsRepository()
       const data = await repo.getLatest()
       setNews(data)
@@ -64,7 +64,7 @@ const News = () => {
     <Box>
       <Heading>NEWS</Heading>
       <Box mt={2}>
-        {user?.isAdmin && (<CreateNewsForm onCreated={handleOnCreated} />)}
+        {user?.isAdmin && <CreateNewsForm onCreated={handleOnCreated} />}
         {news.map((r) => (
           <NewsRecord
             key={r.date.getTime()}

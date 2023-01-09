@@ -2,10 +2,10 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directory: '/'
     schedule:
-      interval: "daily"
-      timezone: "Asia/Tokyo"
-      time: "05:00"
+      interval: 'daily'
+      timezone: 'Asia/Tokyo'
+      time: '05:00'
     labels:
       - build

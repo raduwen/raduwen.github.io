@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import { getAuthenticate } from '@/lib/firebase'
 import { UserContext } from '@/contexts/UserContext'
-import { UserRepository, UserRoleRepository  } from '@/domain/user/repository';
+import { UserRepository, UserRoleRepository } from '@/domain/user/repository'
 
 type User = {
   uid: string | null
@@ -13,7 +13,13 @@ type User = {
 }
 
 const NewUser = (): User => {
-  return { uid: null, name: null, photoURL: null, isAnonymous: true, isAdmin: false }
+  return {
+    uid: null,
+    name: null,
+    photoURL: null,
+    isAnonymous: true,
+    isAdmin: false,
+  }
 }
 
 const logSignedIn = async (uid: string) => {
@@ -26,7 +32,11 @@ const logSignedIn = async (uid: string) => {
       lastSignedIn: now,
       signInCount: 1,
     })
-  } else if (now.getDate() > user.lastSignedIn.getDate() || now.getMonth() > user.lastSignedIn.getMonth() || now.getFullYear() > user.lastSignedIn.getFullYear()) {
+  } else if (
+    now.getDate() > user.lastSignedIn.getDate() ||
+    now.getMonth() > user.lastSignedIn.getMonth() ||
+    now.getFullYear() > user.lastSignedIn.getFullYear()
+  ) {
     repo.set(uid, {
       lastSignedIn: now,
       signInCount: user.signInCount + 1,

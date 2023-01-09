@@ -3,6 +3,6 @@ type MainMenuEntity = {
   text: string
   sub: string
   image: string
-};
+}
 
-export type { MainMenuEntity };
+export type { MainMenuEntity }

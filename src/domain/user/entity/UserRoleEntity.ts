@@ -1,5 +1,5 @@
 type UserRoleEntity = {
-  admin: boolean;
-};
+  admin: boolean
+}
 
-export type { UserRoleEntity };
+export type { UserRoleEntity }

@@ -1,4 +1,4 @@
-import type { MainMenuEntity } from '@/domain/site-menu/entity';
+import type { MainMenuEntity } from '@/domain/site-menu/entity'
 
 class MainMenuRepository {
   async getAll(): Promise<MainMenuEntity[]> {
@@ -43,9 +43,9 @@ class MainMenuRepository {
           sub: 'yobi2',
           image: '/images/construction.png',
         },
-      ]);
-    });
+      ])
+    })
   }
 }
 
-export { MainMenuRepository };
+export { MainMenuRepository }

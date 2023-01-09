@@ -1,6 +1,6 @@
 type NewsEntity = {
-  date: Date;
-  topic: string;
-};
+  date: Date
+  topic: string
+}
 
-export type { NewsEntity };
+export type { NewsEntity }

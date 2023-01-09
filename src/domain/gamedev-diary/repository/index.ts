@@ -1,1 +1,1 @@
-export { PostRepository } from './PostRepository';
+export { PostRepository } from './PostRepository'

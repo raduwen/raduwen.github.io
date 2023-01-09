@@ -1,1 +1,5 @@
-export type { PostEntity, PostWithoutBodyEntity, PostElement } from './PostEntity';
+export type {
+  PostEntity,
+  PostWithoutBodyEntity,
+  PostElement,
+} from './PostEntity'

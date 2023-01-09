@@ -1,1 +1,1 @@
-export type { NewsEntity } from './NewsEntity';
+export type { NewsEntity } from './NewsEntity'

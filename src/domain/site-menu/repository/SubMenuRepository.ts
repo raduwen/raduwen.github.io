@@ -1,4 +1,4 @@
-import type { SubMenuEntity } from '@/domain/site-menu/entity';
+import type { SubMenuEntity } from '@/domain/site-menu/entity'
 
 const data = {
   top: {
@@ -21,7 +21,7 @@ const data = {
   },
   prog: {
     topic: 'プログラミング\n大変...',
-    items: [{ href: '#', text: 'ゲーム開発', disabled: true}],
+    items: [{ href: '#', text: 'ゲーム開発', disabled: true }],
     // items: [{ href: '/programming/gamedev', text: 'ゲーム開発' }],
   },
   music: {

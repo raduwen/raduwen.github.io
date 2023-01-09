@@ -1,7 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import NextLink from 'next/link'
-import { Box, Heading, UnorderedList, ListItem, Text, Link } from '@chakra-ui/react'
+import {
+  Box,
+  Heading,
+  UnorderedList,
+  ListItem,
+  Text,
+  Link,
+} from '@chakra-ui/react'
 
 import { MainLayout } from '@/layouts/MainLayout'
 import { Board } from '@/components/Board'
@@ -37,7 +44,11 @@ const RaduwenPage = () => {
         </Box>
         <Box mt="16" px="16" display="flex" justifyContent="space-between">
           <Text>
-            わしの環境は<NextLink passHref href="/top/raduwen/env"><Link color="red">ここ</Link></NextLink>じゃ
+            わしの環境は
+            <NextLink passHref href="/top/raduwen/env">
+              <Link color="red">ここ</Link>
+            </NextLink>
+            じゃ
           </Text>
         </Box>
       </Board>

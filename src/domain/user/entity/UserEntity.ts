@@ -1,6 +1,6 @@
 type UserEntity = {
-  lastSignedIn: Date;
-  signInCount: number;
-};
+  lastSignedIn: Date
+  signInCount: number
+}
 
-export type { UserEntity };
+export type { UserEntity }

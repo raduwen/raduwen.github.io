@@ -1,2 +1,2 @@
-export { MainMenuRepository } from './MainMenuRepository';
-export { SubMenuRepository } from './SubMenuRepository';
+export { MainMenuRepository } from './MainMenuRepository'
+export { SubMenuRepository } from './SubMenuRepository'

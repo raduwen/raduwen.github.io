@@ -16,7 +16,9 @@ const EnvironmentPage = () => {
           <Heading textAlign="center">PC</Heading>
 
           <Box mt="16" px="16" display="flex" flexDirection="column">
-            <Heading as="h2" size="md">ほぼゲーム用</Heading>
+            <Heading as="h2" size="md">
+              ほぼゲーム用
+            </Heading>
             <UnorderedList mt="4">
               <ListItem>OS : Windows 11 Pro</ListItem>
               <ListItem>Mother : ASRock B550 Phatom Gaming 4</ListItem>
@@ -27,7 +29,9 @@ const EnvironmentPage = () => {
           </Box>
 
           <Box mt="16" px="16" display="flex" flexDirection="column">
-            <Heading as="h2" size="md">開発用</Heading>
+            <Heading as="h2" size="md">
+              開発用
+            </Heading>
             <UnorderedList mt="4">
               <ListItem>Mac mini (2018)</ListItem>
               <ListItem>OS : macOS Monterey</ListItem>
@@ -38,7 +42,9 @@ const EnvironmentPage = () => {
           </Box>
 
           <Box mt="16" px="16" display="flex" flexDirection="column">
-            <Heading as="h2" size="md">サーバ用</Heading>
+            <Heading as="h2" size="md">
+              サーバ用
+            </Heading>
             <UnorderedList mt="4">
               <ListItem>Raspberry Pi 4B 8GB</ListItem>
               <ListItem>Raspberry Pi 3B+</ListItem>
