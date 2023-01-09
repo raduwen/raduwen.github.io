@@ -18,11 +18,11 @@ const EnvironmentPage = () => {
           <Box mt="16" px="16" display="flex" flexDirection="column">
             <Heading as="h2" size="md">ほぼゲーム用</Heading>
             <UnorderedList mt="4">
-              <ListItem>OS : Windows 10 Pro</ListItem>
-              <ListItem>Mother : GIGABYTE GA-B75M-D3H</ListItem>
-              <ListItem>CPU : Intel Core i7-2600</ListItem>
-              <ListItem>Memory : 16GB</ListItem>
-              <ListItem>GPU : GeForce GTX 1060 6GB</ListItem>
+              <ListItem>OS : Windows 11 Pro</ListItem>
+              <ListItem>Mother : ASRock B550 Phatom Gaming 4</ListItem>
+              <ListItem>CPU : AMD Ryzen 9 5900X</ListItem>
+              <ListItem>Memory : 64GB</ListItem>
+              <ListItem>GPU : GeForce RTX 3070</ListItem>
             </UnorderedList>
           </Box>
 
