@@ -18,7 +18,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.11.0",
     "date-fns": "^2.29.3",
-    "date-fns-tz": "^2.0.0",
+    "date-fns-tz": "^2.0.1",
     "firebase": "^11.3.1",
     "framer-motion": "^8.4.3",
     "next": "^15.1.7",
