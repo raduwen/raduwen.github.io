@@ -36,6 +36,6 @@
     "eslint-plugin-react": "^7.32.2",
     "firebase-tools": "^13.31.0",
     "prettier": "^3.5.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.7.3"
   }
 }
