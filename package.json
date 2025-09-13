@@ -14,7 +14,7 @@
     "prettier": "prettier -w ."
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.5.5",
+    "@chakra-ui/react": "^3.26.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.11.0",
     "date-fns": "^2.29.3",
